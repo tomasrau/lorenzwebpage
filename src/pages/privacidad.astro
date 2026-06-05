@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 
 const homeUrl = `${import.meta.env.BASE_URL}/`;
+const logoUrl = `${homeUrl}lorenz-favicon.png`;
 ---
 
 <Layout
@@ -12,7 +13,7 @@ const homeUrl = `${import.meta.env.BASE_URL}/`;
   <header class="border-b border-brand-border-dark bg-white">
     <div class="max-w-4xl mx-auto px-6 py-6">
       <a href={homeUrl} class="inline-flex items-center gap-2 font-display font-semibold text-xl text-brand-dark hover:text-brand-accent transition-colors">
-        <span class="w-8 h-8 rounded-lg bg-brand-accent flex items-center justify-center text-white font-bold text-lg">L</span>
+        <img src={logoUrl} width="36" height="36" alt="" class="w-9 h-9 object-contain" />
         Lorenz
       </a>
     </div>
@@ -47,7 +48,7 @@ const homeUrl = `${import.meta.env.BASE_URL}/`;
 
         <section>
           <h2 class="text-2xl font-bold mb-3">Derechos y contacto</h2>
-          <p>Podés solicitar acceso, corrección o eliminación de tus datos escribiendo a <a class="font-semibold text-brand-accent hover:text-brand-accent-hover" href="mailto:contacto@lorenz.systems">contacto@lorenz.systems</a>.</p>
+          <p>Podés solicitar acceso, corrección o eliminación de tus datos escribiendo a <a class="font-semibold text-brand-accent hover:text-brand-accent-hover" href="mailto:info@lorenz.ar">info@lorenz.ar</a>.</p>
         </section>
 
         <section>

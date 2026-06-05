@@ -20,7 +20,8 @@ const {
 } = Astro.props;
 
 const faviconUrl = `${baseUrl}lorenz-favicon.png`;
-const legacyFaviconUrl = `${baseUrl}favicon.ico`;
+const favicon32Url = `${baseUrl}favicon-32.png`;
+const appleTouchIconUrl = `${baseUrl}apple-touch-icon.png`;
 const sitemapUrl = new URL(`${baseUrl}sitemap.xml`, Astro.site).href;
 ---
 
@@ -30,7 +31,8 @@ const sitemapUrl = new URL(`${baseUrl}sitemap.xml`, Astro.site).href;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href={faviconUrl} />
-    <link rel="icon" href={legacyFaviconUrl} />
+    <link rel="icon" type="image/png" sizes="32x32" href={favicon32Url} />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIconUrl} />
     <meta name="generator" content={Astro.generator} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 

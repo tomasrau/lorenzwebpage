@@ -2,6 +2,7 @@
 // Footer.astro
 const homeUrl = `${import.meta.env.BASE_URL}/`;
 const privacyUrl = `${homeUrl}privacidad/`;
+const logoUrl = `${homeUrl}lorenz-favicon.png`;
 ---
 
 <footer class="bg-brand-dark text-white pt-16 pb-12">
@@ -11,7 +12,7 @@ const privacyUrl = `${homeUrl}privacidad/`;
       <!-- Brand & Description -->
       <div class="lg:col-span-5 space-y-4">
         <div class="flex items-center space-x-2">
-          <span class="w-8 h-8 rounded-lg bg-brand-accent flex items-center justify-center text-white font-bold text-lg">L</span>
+          <img src={logoUrl} width="36" height="36" alt="" class="w-9 h-9 object-contain" />
           <span class="font-display font-semibold text-xl tracking-tight text-white">Lorenz</span>
         </div>
         <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
@@ -51,7 +52,7 @@ const privacyUrl = `${homeUrl}privacidad/`;
       </div>
       <div class="flex space-x-6">
         <a href={privacyUrl} class="hover:text-slate-400 transition-colors">Política de Privacidad</a>
-        <a href="mailto:contacto@lorenz.systems" class="hover:text-slate-400 transition-colors">contacto@lorenz.systems</a>
+        <a href="mailto:info@lorenz.ar" class="hover:text-slate-400 transition-colors">info@lorenz.ar</a>
       </div>
     </div>
   </div>

@@ -46,7 +46,7 @@ Todos los comandos deben ser ejecutados en la raíz del proyecto con el entorno 
 
 ## Formulario de contacto
 
-El formulario utiliza el endpoint AJAX de FormSubmit para enviar las solicitudes a `contacto@lorenz.systems`.
+El formulario utiliza el endpoint AJAX de FormSubmit para enviar las solicitudes a `info@lorenz.ar`.
 
 La primera solicitud enviada requiere confirmar la dirección desde el email de activación de FormSubmit. Hasta completar esa activación, los mensajes no llegarán normalmente a la bandeja de entrada.
 

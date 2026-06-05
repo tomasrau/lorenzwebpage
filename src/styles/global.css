@@ -8,16 +8,19 @@
   --font-display: 'Instrument Sans', 'Inter', sans-serif;
 
   /* Brand Colors */
-  --color-brand-dark: #090d16;          /* Deep dark slate for headers & primary titles */
-  --color-brand-slate: #1e293b;         /* Slate-800 for secondary text and sub-headers */
-  --color-brand-muted: #64748b;         /* Muted gray for small text */
-  --color-brand-bg: #fcfcfd;            /* Premium off-white background */
-  --color-brand-card-bg: #ffffff;       /* Pure white for cards */
-  --color-brand-border: #f1f5f9;         /* Very subtle border slate-100 */
-  --color-brand-border-dark: #e2e8f0;    /* Slate-200 for stronger dividers */
-  --color-brand-accent: #0d9488;         /* Teal-600 financial accent */
-  --color-brand-accent-hover: #0f766e;   /* Teal-700 for hovers */
-  --color-brand-accent-light: #f0fdfa;   /* Very light teal background for pills/badges */
+  --color-brand-dark: #0e0424;
+  --color-brand-slate: #2d2540;
+  --color-brand-muted: #6f6780;
+  --color-brand-bg: #fcfbff;
+  --color-brand-card-bg: #ffffff;
+  --color-brand-border: #f2eff8;
+  --color-brand-border-dark: #e4dff0;
+  --color-brand-accent: #5e17eb;
+  --color-brand-accent-hover: #4810b8;
+  --color-brand-accent-light: #f2ecfe;
+  --color-brand-secondary: #ff5733;
+  --color-brand-secondary-light: #fff0ec;
+  --color-brand-highlight: #ffc305;
   
   /* Extra transitions and details */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,14 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#fcfcfd"/>
   <path d="M0 0h1200v630H0z" fill="url(#grid)" opacity=".55"/>
-  <circle cx="1040" cy="80" r="330" fill="#0d9488" opacity=".08"/>
-  <rect x="96" y="96" width="84" height="84" rx="22" fill="#0d9488"/>
-  <text x="138" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#fff">L</text>
+  <circle cx="1040" cy="80" r="330" fill="#5e17eb" opacity=".10"/>
   <text x="96" y="285" font-family="Arial, sans-serif" font-size="74" font-weight="700" fill="#090d16">Lorenz</text>
-  <text x="96" y="355" font-family="Arial, sans-serif" font-size="34" font-weight="600" fill="#1e293b">Finanzas, datos y automatización</text>
-  <text x="96" y="415" font-family="Arial, sans-serif" font-size="28" fill="#64748b">Sistemas de información para decidir mejor.</text>
-  <rect x="96" y="515" width="260" height="52" rx="26" fill="#f0fdfa" stroke="#99f6e4"/>
-  <text x="226" y="549" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#0d9488">lorenz.systems</text>
+  <text x="96" y="355" font-family="Arial, sans-serif" font-size="34" font-weight="600" fill="#2d2540">Finanzas, datos y automatización</text>
+  <text x="96" y="415" font-family="Arial, sans-serif" font-size="28" fill="#6f6780">Sistemas de información para decidir mejor.</text>
+  <rect x="96" y="515" width="260" height="52" rx="26" fill="#f2ecfe" stroke="#d8c9fa"/>
+  <text x="226" y="549" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#5e17eb">lorenz.ar</text>
   <defs>
     <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
       <path d="M32 0H0v32" fill="none" stroke="#e2e8f0" stroke-width="1"/>

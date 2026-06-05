@@ -1,155 +1,102 @@
 ---
-// Navbar.astro
-const logoUrl = `${import.meta.env.BASE_URL}/lorenz-favicon.png`;
+import logoDark from '../media/logos/LOGO_black_no_bg_no_desc_trimmed.png';
+import logoLight from '../media/logos/LOGO_white_no_bg_no_desc_trimmed.png';
 ---
 
-<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
-  <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
-    <!-- Brand Logo -->
-    <a href="#top" class="flex items-center space-x-2 group">
-      <img src={logoUrl} width="36" height="36" alt="" class="w-9 h-9 object-contain transition-transform duration-300 group-hover:scale-105" />
-      <span class="font-display font-semibold text-xl tracking-tight text-brand-dark transition-colors duration-300 group-hover:text-brand-accent">Lorenz</span>
+<header id="main-header" class="nav-header fixed top-0 left-0 right-0 z-50 text-brand-dark">
+  <div class="max-w-[1440px] mx-auto px-6 md:px-10 h-full flex items-center justify-between">
+    <a href="#top" class="relative block w-[126px] md:w-[144px] group">
+      <img src={logoDark.src} width="398" height="103" alt="Lorenz" class="nav-logo-dark w-full h-auto transition-all duration-300 group-hover:scale-[1.02]" />
+      <img src={logoLight.src} width="399" height="102" alt="" class="nav-logo-light absolute inset-0 w-full h-auto opacity-0 transition-all duration-300 group-hover:scale-[1.02]" />
     </a>
 
-    <!-- Desktop Navigation Links -->
-    <nav class="hidden md:flex items-center space-x-8">
-      <a href="#servicios" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Servicios</a>
-      <a href="#soluciones" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Soluciones</a>
-      <a href="#metodologia" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Metodología</a>
-      <a href="#casos" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Casos de Uso</a>
-      <a href="#insights" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Research</a>
-      <a href="#contacto" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Contacto</a>
+    <nav class="hidden lg:flex items-center gap-7">
+      <a href="#enfoque">Enfoque</a>
+      <a href="#soluciones">Soluciones</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#metodologia">Método</a>
+      <a href="#casos">Casos</a>
     </nav>
 
-    <!-- CTAs -->
-    <div class="hidden md:flex items-center space-x-4">
-      <a href="#contacto" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg text-white bg-brand-accent hover:bg-brand-accent-hover transition-colors duration-200 shadow-sm">
-        Solicitar diagnóstico
-      </a>
-    </div>
+    <a href="#contacto" class="nav-cta hidden md:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold rounded-full text-white bg-brand-dark hover:bg-brand-accent transition-colors">
+      Solicitar diagnóstico
+    </a>
 
-    <!-- Mobile Menu Button -->
-    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-slate hover:text-brand-accent hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-accent" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-accent" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 7h16M4 12h16M4 17h16"></path>
+        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
   </div>
 
-  <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b border-brand-border shadow-lg transition-all duration-300 ease-in-out opacity-0 translate-y-[-10px]">
-    <nav class="flex flex-col px-6 py-6 space-y-4">
-      <a href="#servicios" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Servicios</a>
-      <a href="#soluciones" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Soluciones</a>
-      <a href="#metodologia" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Metodología</a>
-      <a href="#casos" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Casos de Uso</a>
-      <a href="#insights" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Research</a>
-      <a href="#contacto" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Contacto</a>
-      
-      <a href="#contacto" class="mobile-nav-link inline-flex items-center justify-center w-full px-4 py-3 text-base font-medium rounded-lg text-white bg-brand-accent hover:bg-brand-accent-hover transition-colors shadow-sm mt-4">
-        Solicitar diagnóstico
-      </a>
+  <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-4 right-4 bg-white/95 text-brand-dark border border-brand-border-dark rounded-2xl shadow-2xl backdrop-blur-xl opacity-0 -translate-y-2 transition-all duration-300">
+    <nav class="flex flex-col p-5 gap-1">
+      <a href="#enfoque" class="mobile-nav-link">Enfoque</a>
+      <a href="#soluciones" class="mobile-nav-link">Soluciones</a>
+      <a href="#servicios" class="mobile-nav-link">Servicios</a>
+      <a href="#metodologia" class="mobile-nav-link">Método</a>
+      <a href="#casos" class="mobile-nav-link">Casos</a>
+      <a href="#contacto" class="mobile-nav-link mt-3 text-center !text-white !bg-brand-accent">Solicitar diagnóstico</a>
     </nav>
   </div>
 </header>
 
 <style>
-  /* Header default large size */
-  header {
-    height: 80px;
-    background-color: rgba(252, 251, 255, 0); /* Starts transparent */
-  }
-
-  /* Sticky animations with scroll-driven timelines */
-  @supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
-    @keyframes shrink-header {
-      to {
-        height: 56px;
-        background-color: rgba(252, 251, 255, 0.85);
-        backdrop-filter: blur(12px);
-        border-color: var(--color-brand-border-dark);
-        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
-      }
-    }
-
-    header {
-      animation: shrink-header auto linear both;
-      animation-timeline: scroll(block root);
-      animation-range: 0px 80px;
-    }
-  }
+  .nav-header { height:80px; border-bottom:1px solid transparent; transition:height .35s ease,background-color .5s ease,border-color .5s ease,color .5s ease,backdrop-filter .5s ease; }
+  .nav-header nav a { font-size:.75rem; font-weight:600; color:currentColor; opacity:.68; transition:opacity .25s ease,color .25s ease; }
+  .nav-header nav a:hover { opacity:1; }
+  .nav-header.is-scrolled { height:64px; background:rgba(246,246,243,.82); border-color:rgba(217,217,212,.75); backdrop-filter:blur(18px); }
+  .nav-header.is-dark { color:white; }
+  .nav-header.is-dark.is-scrolled { background:rgba(16,16,18,.82); border-color:rgba(255,255,255,.1); }
+  .nav-header.is-dark .nav-logo-dark { opacity:0; }
+  .nav-header.is-dark .nav-logo-light { opacity:1; }
+  .nav-header.is-dark .nav-cta { color:#111113; background:white; }
+  .mobile-nav-link { padding:.8rem 1rem; border-radius:.8rem; font-size:.9rem!important; opacity:1!important; }
+  .mobile-nav-link:hover { background:#f0edf6; }
 </style>
 
 <script>
-  // Fallback for browsers that don't support scroll-driven animations
-  if (!CSS.supports('(animation-timeline: scroll()) and (animation-range: 0% 100%)')) {
-    const header = document.getElementById('main-header');
-    const scrollDistance = 80;
-
-    window.addEventListener('scroll', () => {
-      if (!header) return;
-      const scrollY = window.scrollY;
-      const progress = Math.min(1, scrollY / scrollDistance);
-
-      if (progress > 0) {
-        header.style.height = `${80 - (24 * progress)}px`;
-        header.style.backgroundColor = `rgba(252, 251, 255, ${0.85 * progress})`;
-        header.style.backdropFilter = `blur(${12 * progress}px)`;
-        header.style.borderColor = `rgba(226, 232, 240, ${progress})`;
-        header.style.boxShadow = `0 4px 20px -2px rgba(0, 0, 0, ${0.03 * progress})`;
-      } else {
-        header.style.height = '80px';
-        header.style.backgroundColor = 'rgba(252, 251, 255, 0)';
-        header.style.backdropFilter = 'none';
-        header.style.borderColor = 'transparent';
-        header.style.boxShadow = 'none';
-      }
-    });
-  }
-
-  // Mobile Menu Toggle
+  const header = document.getElementById('main-header');
   const menuBtn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   const hamburgerIcon = document.getElementById('hamburger-icon');
   const closeIcon = document.getElementById('close-icon');
   const navLinks = document.querySelectorAll('.mobile-nav-link');
 
+  function updateHeaderPosition() {
+    header?.classList.toggle('is-scrolled', window.scrollY > 24);
+  }
+
+  const navThemeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        header?.classList.toggle('is-dark', entry.target.getAttribute('data-nav-theme') === 'dark');
+      }
+    });
+  }, { rootMargin: '-48px 0px -85% 0px', threshold: 0 });
+
+  document.querySelectorAll('[data-nav-theme]').forEach((section) => navThemeObserver.observe(section));
+  window.addEventListener('scroll', updateHeaderPosition, { passive: true });
+  updateHeaderPosition();
+
   function toggleMenu() {
     if (!menuBtn || !menu || !hamburgerIcon || !closeIcon) return;
-
     const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
     menuBtn.setAttribute('aria-expanded', String(!isExpanded));
-
     if (!isExpanded) {
-      // Open
       menu.classList.remove('hidden');
-      setTimeout(() => {
-        menu.classList.remove('opacity-0', 'translate-y-[-10px]');
-        menu.classList.add('opacity-100', 'translate-y-0');
-      }, 10);
+      requestAnimationFrame(() => menu.classList.remove('opacity-0', '-translate-y-2'));
       hamburgerIcon.classList.add('hidden');
       closeIcon.classList.remove('hidden');
     } else {
-      // Close
-      menu.classList.remove('opacity-100', 'translate-y-0');
-      menu.classList.add('opacity-0', 'translate-y-[-10px]');
+      menu.classList.add('opacity-0', '-translate-y-2');
       hamburgerIcon.classList.remove('hidden');
       closeIcon.classList.add('hidden');
-      setTimeout(() => {
-        menu.classList.add('hidden');
-      }, 300);
+      setTimeout(() => menu.classList.add('hidden'), 300);
     }
   }
 
   menuBtn?.addEventListener('click', toggleMenu);
-
-  // Close mobile menu when clicking a link
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (menu && !menu.classList.contains('hidden')) {
-        toggleMenu();
-      }
-    });
-  });
+  navLinks.forEach((link) => link.addEventListener('click', toggleMenu));
 </script>

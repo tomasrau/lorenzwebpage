@@ -1,77 +1,177 @@
 ---
-// Hero.astro
+import heroBackground from '../media/images/hero-background-persona-laptop-1920x1080.webp';
 ---
 
-<section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-radial from-slate-50 via-brand-bg to-brand-bg">
-  <!-- Subtle top grid decoration -->
-  <div class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+<section id="hero" data-scroll-theme="#101012" data-nav-theme="dark" class="hero-sequence relative h-[360vh]">
+  <div class="hero-stage sticky top-0 h-screen overflow-hidden bg-[#080a0d]">
+    <img src={heroBackground.src} width="1920" height="1080" alt="" class="hero-photo absolute inset-0 w-full h-full object-cover" />
+    <div class="hero-shade absolute inset-0"></div>
 
-  <!-- Subtle ambient glow -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-12 w-[800px] h-[350px] bg-brand-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="flex flex-col items-start text-left max-w-5xl">
-      <!-- Tag / Badge -->
-      <div class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-brand-accent-light border border-brand-border-dark text-brand-accent text-xs font-semibold tracking-wide uppercase mb-6 animate-fade-in">
-        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
-        <span>Consultoría Estratégica & Analytics</span>
-      </div>
-
-      <!-- Main Headline / Claim -->
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-brand-dark leading-[1.1] mb-6">
-        Tecnología financiera, inteligencia de datos y estrategia para empresas que necesitan <span class="text-brand-accent">decidir mejor</span>.
+    <div class="hero-intro absolute inset-x-0 top-[15vh] z-20 px-6 text-center text-white">
+      <span class="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-white/60 mb-6">
+        <span class="w-8 h-px bg-brand-accent"></span>
+        Gestión financiera basada en datos
+        <span class="w-8 h-px bg-brand-accent"></span>
+      </span>
+      <h1 class="max-w-5xl mx-auto text-[clamp(3.5rem,7.5vw,8rem)] font-semibold tracking-[-0.08em] text-white leading-[0.87]">
+        Claridad para dirigir el futuro.
       </h1>
-
-      <!-- Subtitle -->
-      <p class="text-lg md:text-xl text-brand-slate font-normal leading-relaxed max-w-3xl mb-10">
-        Diseñamos sistemas de información, automatización y control financiero para convertir datos dispersos en decisiones ejecutivas claras, medibles y accionables.
+      <p class="max-w-2xl mx-auto mt-7 text-base md:text-xl text-white/65 leading-relaxed">
+        Integramos finanzas, datos y tecnología para transformar información dispersa en capacidad de gestión.
       </p>
-
-      <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-        <a href="#contacto" class="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold rounded-lg text-white bg-brand-accent hover:bg-brand-accent-hover active:scale-98 transition-all duration-200 shadow-sm">
-          Solicitar diagnóstico
-          <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </a>
-        <a href="#soluciones" class="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold rounded-lg text-brand-dark bg-white border border-brand-border-dark hover:bg-slate-50 active:scale-98 transition-all duration-200 shadow-xs">
-          Ver soluciones
-        </a>
+      <div class="flex flex-col sm:flex-row justify-center gap-3 mt-8">
+        <a href="#contacto" class="px-6 py-3.5 rounded-full bg-white text-brand-dark text-sm font-semibold hover:bg-brand-accent hover:text-white transition-colors">Solicitar diagnóstico</a>
+        <a href="#enfoque" class="px-6 py-3.5 rounded-full bg-white/8 border border-white/20 text-white text-sm font-semibold hover:bg-white/15 transition-colors">Conocer el enfoque</a>
       </div>
+    </div>
 
-      <!-- Capability badges under CTAs -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16 pt-8 border-t border-brand-border w-full">
-        <div>
-          <span class="block text-2xl font-bold text-brand-dark">E2E</span>
-          <span class="block text-xs text-brand-muted mt-1 uppercase tracking-wider font-semibold">Integración de datos</span>
-        </div>
-        <div>
-          <span class="block text-2xl font-bold text-brand-dark">BI</span>
-          <span class="block text-xs text-brand-muted mt-1 uppercase tracking-wider font-semibold">Reportes accionables</span>
-        </div>
-        <div class="col-span-2 md:col-span-1">
-          <span class="block text-2xl font-bold text-brand-dark">AUTO</span>
-          <span class="block text-xs text-brand-muted mt-1 uppercase tracking-wider font-semibold">Procesos trazables</span>
+    <div class="dashboard-scene absolute inset-0 z-10 pointer-events-none">
+      <div class="dashboard-shell">
+        <div class="dashboard-ui">
+          <aside class="dash-sidebar">
+            <div class="dash-mark">L</div>
+            <nav>
+              <span class="active"><i></i>Resumen</span>
+              <span><i></i>Ingresos</span>
+              <span><i></i>Rentabilidad</span>
+              <span><i></i>Flujo de caja</span>
+              <span><i></i>Presupuestos</span>
+              <span><i></i>Análisis</span>
+            </nav>
+            <span class="dash-settings"><i></i>Configuración</span>
+          </aside>
+
+          <div class="dash-content">
+            <header class="dash-header">
+              <div><small>Dirección financiera</small><strong>Resumen ejecutivo</strong></div>
+              <div class="dash-actions"><span>Q2 2026</span><span>vs Q1 2026</span><b>•••</b></div>
+            </header>
+
+            <div class="dash-kpis">
+              <article><span>Ingresos totales</span><strong>$ 24.8 M</strong><em>▲ 12.5% vs mes anterior</em></article>
+              <article><span>EBITDA</span><strong>$ 8.4 M</strong><em>▲ 8.2% vs mes anterior</em></article>
+              <article><span>Margen EBITDA</span><strong>33.8%</strong><em>▲ 2.1 pp vs mes anterior</em></article>
+              <article><span>Flujo de caja libre</span><strong>$ 5.7 M</strong><em>▲ 15.3% vs mes anterior</em></article>
+            </div>
+
+            <div class="dash-grid">
+              <article class="dash-panel dash-trend">
+                <div class="panel-title"><strong>Ingresos vs gastos</strong><span>Ingresos · Gastos</span></div>
+                <svg viewBox="0 0 500 170" fill="none" aria-hidden="true">
+                  <path d="M18 140C70 100 93 86 137 95C190 105 211 58 264 72C318 86 351 43 398 52C437 59 452 30 482 24" stroke="#8fb0c9" stroke-width="3"/>
+                  <path d="M18 136C76 124 106 125 146 128C196 133 221 102 270 112C325 122 355 95 405 100C439 103 458 89 482 78" stroke="#477da5" stroke-width="3"/>
+                  <path d="M18 150H482M18 105H482M18 60H482" stroke="white" stroke-opacity=".08"/>
+                </svg>
+              </article>
+              <article class="dash-panel dash-bars">
+                <div class="panel-title"><strong>Flujo de caja</strong><span>Operativo · Inversión</span></div>
+                <div class="bar-chart"><i style="--h:52%"></i><i style="--h:71%"></i><i style="--h:62%"></i><i style="--h:78%"></i><i style="--h:69%"></i><i style="--h:82%"></i></div>
+              </article>
+              <article class="dash-panel dash-donut">
+                <div class="panel-title"><strong>Distribución de ingresos</strong></div>
+                <div class="donut"><span>$24.8M<small>Total</small></span></div>
+                <ul><li>Producto A <b>42%</b></li><li>Producto B <b>28%</b></li><li>Servicios <b>30%</b></li></ul>
+              </article>
+              <article class="dash-panel dash-profit">
+                <div class="panel-title"><strong>Rentabilidad por línea</strong></div>
+                <div><span>Producto A</span><i style="--w:86%"></i><b>38.4%</b></div>
+                <div><span>Producto B</span><i style="--w:67%"></i><b>29.7%</b></div>
+                <div><span>Servicios</span><i style="--w:48%"></i><b>21.5%</b></div>
+              </article>
+              <article class="dash-panel dash-margin">
+                <div class="panel-title"><strong>Evolución del margen</strong></div>
+                <svg viewBox="0 0 340 120" fill="none" aria-hidden="true">
+                  <path d="M5 98C45 82 64 74 95 78C130 82 152 53 185 61C223 70 253 45 286 47C308 49 325 32 336 24V115H5Z" fill="url(#marginArea)"/>
+                  <path d="M5 98C45 82 64 74 95 78C130 82 152 53 185 61C223 70 253 45 286 47C308 49 325 32 336 24" stroke="#a7b9c6" stroke-width="2"/>
+                  <defs><linearGradient id="marginArea" x1="170" y1="24" x2="170" y2="115"><stop stop-color="#a7b9c6" stop-opacity=".5"/><stop offset="1" stop-color="#a7b9c6" stop-opacity="0"/></linearGradient></defs>
+                </svg>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="hero-enter absolute inset-x-0 bottom-8 z-30 text-center text-[10px] font-semibold tracking-[0.2em] uppercase text-white/45">
+      Scroll para explorar
+    </div>
+    <div class="hero-transition absolute inset-0 z-20 bg-[#f6f6f3] opacity-0 pointer-events-none"></div>
   </div>
 </section>
 
 <style>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
+  .hero-photo { filter:saturate(.65) brightness(.72); transform:scale(1.035); will-change:transform,filter,opacity; }
+  .hero-shade { background:linear-gradient(180deg,rgba(2,4,7,.52),rgba(2,4,7,.12) 50%,rgba(2,4,7,.48)),radial-gradient(circle at 50% 22%,transparent 20%,rgba(2,4,7,.42) 100%); }
+  .hero-intro,.dashboard-shell,.hero-enter,.hero-transition { will-change:transform,opacity; }
+  .dashboard-scene { perspective:1800px; }
+  .dashboard-shell { position:absolute; left:7.5%; top:52%; width:min(45vw,900px); aspect-ratio:1.58; transform-origin:50% 50%; transform:perspective(1800px) rotateX(5deg) rotateY(16deg) rotateZ(-2deg) scale(.82); filter:drop-shadow(0 40px 55px rgba(0,0,0,.55)); }
+  .dashboard-ui { height:100%; display:grid; grid-template-columns:15% 1fr; overflow:hidden; color:#e6e9eb; background:linear-gradient(145deg,rgba(16,22,28,.97),rgba(7,11,15,.98)); border:1px solid rgba(220,231,238,.32); border-radius:18px; box-shadow:inset 0 1px rgba(255,255,255,.08); font-family:var(--font-sans); }
+  .dash-sidebar { padding:9% 8%; border-right:1px solid rgba(255,255,255,.07); display:flex; flex-direction:column; }
+  .dash-mark { width:28%; aspect-ratio:1; border:1px solid rgba(255,255,255,.35); border-radius:22%; display:grid; place-items:center; font-size:clamp(5px,.6vw,11px); font-weight:700; }
+  .dash-sidebar nav { display:grid; gap:4%; margin-top:24%; flex:1; }
+  .dash-sidebar nav span,.dash-settings { display:flex; align-items:center; gap:8%; min-height:8%; padding:0 7%; border-radius:5px; font-size:clamp(4px,.52vw,9px); color:rgba(255,255,255,.42); white-space:nowrap; }
+  .dash-sidebar nav .active { background:rgba(255,255,255,.08); color:rgba(255,255,255,.82); }
+  .dash-sidebar i { width:7px; aspect-ratio:1; border:1px solid currentColor; border-radius:2px; }
+  .dash-content { padding:3.5%; min-width:0; }
+  .dash-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:2.5%; }
+  .dash-header small,.dash-header strong { display:block; }.dash-header small{font-size:clamp(4px,.46vw,8px);color:rgba(255,255,255,.32);text-transform:uppercase;letter-spacing:.12em}.dash-header strong{font-size:clamp(8px,1vw,18px);font-weight:500;margin-top:3%}
+  .dash-actions { display:flex; align-items:center; gap:5px }.dash-actions span,.dash-actions b{padding:5px 7px;border:1px solid rgba(255,255,255,.09);border-radius:5px;font-size:clamp(4px,.45vw,8px);font-weight:400;color:rgba(255,255,255,.45)}
+  .dash-kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2%; margin-bottom:1.2%; }
+  .dash-kpis article,.dash-panel { background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.035)); border:1px solid rgba(255,255,255,.07); border-radius:7px; }
+  .dash-kpis article { padding:8%; }.dash-kpis span,.dash-kpis em{display:block;font-size:clamp(4px,.42vw,8px);font-style:normal;color:rgba(255,255,255,.38)}.dash-kpis strong{display:block;font-size:clamp(8px,1.05vw,19px);font-weight:400;margin:8% 0}.dash-kpis em{color:#70a9a5}
+  .dash-grid { height:70%; display:grid; grid-template-columns:1.35fr 1fr 1fr; grid-template-rows:1.05fr .95fr; gap:1.2%; }
+  .dash-panel { padding:4%; overflow:hidden; }.dash-trend{grid-column:span 2}.panel-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:3%}.panel-title strong{font-size:clamp(5px,.55vw,10px);font-weight:500}.panel-title span{font-size:clamp(3px,.36vw,7px);color:rgba(255,255,255,.3)}
+  .dash-trend svg,.dash-margin svg{width:100%;height:83%}.bar-chart{height:83%;display:flex;align-items:center;justify-content:space-around;border-bottom:1px solid rgba(255,255,255,.12)}.bar-chart i{display:block;width:8%;height:var(--h);background:linear-gradient(to right,#486b84 50%,#8a939a 50%);box-shadow:8px 13px 0 rgba(105,116,124,.35)}
+  .dash-donut{display:grid;grid-template-columns:1fr 1fr;align-items:center}.dash-donut .panel-title{grid-column:span 2}.donut{width:70%;aspect-ratio:1;margin:auto;border-radius:50%;background:conic-gradient(#b9c0c5 0 42%,#74818a 42% 70%,#3f596b 70%);display:grid;place-items:center}.donut:before{content:"";width:70%;aspect-ratio:1;border-radius:50%;background:#12181d}.donut span{position:absolute;text-align:center;font-size:clamp(5px,.65vw,12px)}.donut small{display:block;color:rgba(255,255,255,.35);font-size:.65em}.dash-donut ul{display:grid;gap:8%;font-size:clamp(3px,.38vw,7px);color:rgba(255,255,255,.45)}.dash-donut li{display:flex;justify-content:space-between}.dash-donut b{font-weight:500;color:rgba(255,255,255,.7)}
+  .dash-profit>div:not(.panel-title){display:grid;grid-template-columns:28% 1fr 16%;gap:3%;align-items:center;margin:8% 0;font-size:clamp(3px,.38vw,7px);color:rgba(255,255,255,.45)}.dash-profit i{height:5px;background:linear-gradient(90deg,#9aa5ac var(--w),rgba(255,255,255,.08) var(--w))}.dash-profit b{font-weight:400;color:rgba(255,255,255,.7)}
+  @media(max-width:900px){.hero-sequence{height:auto}.hero-stage{position:relative;min-height:100svh;padding:8rem 0 5rem}.hero-photo{object-position:62% center}.hero-intro{position:relative;top:auto}.dashboard-scene{position:relative;height:45vw;min-height:260px;margin-top:4rem}.dashboard-shell{left:4%;top:0;width:92%;transform:perspective(1200px) rotateX(4deg) rotateY(8deg) rotateZ(-1deg) scale(.92)}.hero-enter,.hero-transition{display:none}}
+  @media(prefers-reduced-motion:reduce){.hero-sequence{height:auto}.hero-stage{position:relative;min-height:100vh}.dashboard-shell{transform:none}}
 </style>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const desktop = window.matchMedia('(min-width: 901px)');
+
+  if (!reduceMotion && desktop.matches) {
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.hero-sequence',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0.7,
+        invalidateOnRefresh: true
+      }
+    });
+
+    timeline
+      .to('.hero-intro', { opacity: 0, y: -90, scale: .96, duration: .18 }, 0)
+      .to('.hero-enter', { opacity: 0, duration: .08 }, 0)
+      .to('.hero-photo', { scale: 1.11, filter: 'saturate(.55) brightness(.48)', duration: .46 }, 0)
+      .to('.dashboard-shell', {
+        left: '50%',
+        top: '50%',
+        xPercent: -50,
+        yPercent: -50,
+        rotateX: 0,
+        rotateY: 0,
+        rotateZ: 0,
+        scale: 1.08,
+        filter: 'drop-shadow(0 45px 65px rgba(0,0,0,.42))',
+        duration: .42,
+        ease: 'power2.inOut'
+      }, .08)
+      .to('.dashboard-shell', {
+        scale: 2.65,
+        filter: 'drop-shadow(0 0 0 rgba(0,0,0,0))',
+        duration: .42,
+        ease: 'power2.in'
+      }, .5)
+      .to('.hero-photo', { opacity: 0, duration: .24 }, .55)
+      .to('.hero-transition', { opacity: 1, duration: .18 }, .82);
+  }
+</script>

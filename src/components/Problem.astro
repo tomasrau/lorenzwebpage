@@ -2,69 +2,47 @@
 // Problem.astro
 ---
 
-<section id="problema" class="py-20 bg-white border-y border-brand-border-dark scroll-mt-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-      <!-- Section Title & Left Panel -->
-      <div class="lg:col-span-5">
-        <span class="text-xs font-semibold uppercase tracking-wider text-brand-accent">El problema de mercado</span>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-brand-dark mt-3 mb-6">
-          La información dispersa frena el crecimiento de tu empresa.
-        </h2>
-        <p class="text-base text-brand-slate leading-relaxed mb-6">
-          En la mayoría de los negocios, los datos críticos están atrapados en sistemas aislados, planillas manuales y reportes atrasados. Sin indicadores confiables, liderar se convierte en una tarea de intuición, no de estrategia.
-        </p>
-        <p class="text-base text-brand-slate leading-relaxed">
-          Esto genera ineficiencias operativas, errores de cálculo financiero y, lo más grave: una toma de decisiones reactiva que siempre llega tarde.
-        </p>
-      </div>
+<section id="problema" data-scroll-theme="#f0f0ed" data-nav-theme="light" class="py-28 md:py-40 border-y border-brand-border-dark scroll-mt-20 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 md:px-10">
+    <div class="max-w-5xl mx-auto text-center mb-20">
+      <span class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-accent">El problema de mercado</span>
+      <h2 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.055em] leading-[0.98] text-brand-dark mt-5 mb-8">
+        La información dispersa convierte cada decisión en una apuesta.
+      </h2>
+      <p class="text-lg md:text-xl text-brand-slate leading-relaxed max-w-3xl mx-auto">
+        Cuando bancos, planillas, sistemas contables y equipos no hablan el mismo idioma, la dirección pierde tiempo reconstruyendo el pasado en lugar de diseñar el futuro.
+      </p>
+    </div>
 
-      <!-- Problem cards grid -->
-      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Problem 1 -->
-        <div class="p-6 rounded-xl bg-brand-bg border border-brand-border hover:border-slate-300 transition-all duration-300">
-          <div class="w-10 h-10 rounded-lg bg-brand-secondary-light text-brand-secondary flex items-center justify-center font-bold mb-4">
-            01
-          </div>
-          <h3 class="text-lg font-semibold text-brand-dark mb-2">Datos desconectados</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">
-            Sistemas contables, CRMs, bancos y planillas Excel que no se comunican entre sí, duplicando esfuerzos y generando contradicciones.
-          </p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-brand-border-dark border border-brand-border-dark rounded-[2rem] overflow-hidden">
+      <article class="group min-h-[300px] p-7 md:p-9 bg-white/75 backdrop-blur-sm flex flex-col justify-between hover:bg-white transition-colors duration-500">
+        <span class="text-xs font-mono text-brand-accent">01 / DATOS</span>
+        <div>
+          <h3 class="text-2xl font-semibold text-brand-dark mb-3">Fuentes desconectadas</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">Versiones contradictorias entre ERP, CRM, bancos y planillas.</p>
         </div>
-
-        <!-- Problem 2 -->
-        <div class="p-6 rounded-xl bg-brand-bg border border-brand-border hover:border-slate-300 transition-all duration-300">
-          <div class="w-10 h-10 rounded-lg bg-brand-secondary-light text-brand-secondary flex items-center justify-center font-bold mb-4">
-            02
-          </div>
-          <h3 class="text-lg font-semibold text-brand-dark mb-2">Reportes con delay</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">
-            Recibir balances o reportes de rendimiento 15 o 30 días tarde impide corregir desvíos comerciales o de costos a tiempo.
-          </p>
+      </article>
+      <article class="group min-h-[300px] p-7 md:p-9 bg-white/75 backdrop-blur-sm flex flex-col justify-between hover:bg-white transition-colors duration-500">
+        <span class="text-xs font-mono text-brand-muted">02 / TIEMPO</span>
+        <div>
+          <h3 class="text-2xl font-semibold text-brand-dark mb-3">Reportes que llegan tarde</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">Desvíos comerciales y financieros visibles cuando ya es tarde para actuar.</p>
         </div>
-
-        <!-- Problem 3 -->
-        <div class="p-6 rounded-xl bg-brand-bg border border-brand-border hover:border-slate-300 transition-all duration-300">
-          <div class="w-10 h-10 rounded-lg bg-brand-secondary-light text-brand-secondary flex items-center justify-center font-bold mb-4">
-            03
-          </div>
-          <h3 class="text-lg font-semibold text-brand-dark mb-2">Carga operativa manual</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">
-            Equipos dedicando horas valiosas a copiar y pegar datos o generar informes repetitivos con alto riesgo de error humano.
-          </p>
+      </article>
+      <article class="group min-h-[300px] p-7 md:p-9 bg-white/75 backdrop-blur-sm flex flex-col justify-between hover:bg-white transition-colors duration-500">
+        <span class="text-xs font-mono text-brand-muted">03 / EQUIPO</span>
+        <div>
+          <h3 class="text-2xl font-semibold text-brand-dark mb-3">Carga manual constante</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">Horas valiosas dedicadas a copiar, limpiar y reconciliar información.</p>
         </div>
-
-        <!-- Problem 4 -->
-        <div class="p-6 rounded-xl bg-brand-bg border border-brand-border hover:border-slate-300 transition-all duration-300">
-          <div class="w-10 h-10 rounded-lg bg-brand-secondary-light text-brand-secondary flex items-center justify-center font-bold mb-4">
-            04
-          </div>
-          <h3 class="text-lg font-semibold text-brand-dark mb-2">Puntos ciegos de caja</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">
-            Dificultad para proyectar el flujo de caja, entender la rentabilidad real por producto o controlar los costos operativos.
-          </p>
+      </article>
+      <article class="group min-h-[300px] p-7 md:p-9 bg-white/75 backdrop-blur-sm flex flex-col justify-between hover:bg-white transition-colors duration-500">
+        <span class="text-xs font-mono text-brand-muted">04 / CONTROL</span>
+        <div>
+          <h3 class="text-2xl font-semibold text-brand-dark mb-3">Puntos ciegos de caja</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">Rentabilidad, costos y flujo de fondos sin una lectura consolidada.</p>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>

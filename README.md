@@ -66,10 +66,10 @@ La primera solicitud enviada requiere confirmar la dirección desde el email de 
 │   │   ├── Services.astro    # Tarjetas detalladas de servicios e integraciones
 │   │   ├── UseCases.astro    # Pestañas interactivas de casos por tipo de cliente
 │   │   ├── Methodology.astro # Cronograma vertical del proceso de consultoría (1 al 5)
-│   │   ├── Dashboard.astro   # Mockup interactivo HTML/CSS/JS de Business Intelligence
+│   │   ├── ConsultingValue.astro # Enfoque consultivo, necesidades y valor agregado
 │   │   ├── Trust.astro       # Pilares de confianza (seguridad, consistencia) e integraciones
-│   │   ├── Insights.astro    # Centro de investigación y artículos técnicos (Research)
 │   │   ├── Contact.astro     # Formulario de contacto y CTAs finales
+│   │   ├── WhatsAppButton.astro # Acceso flotante a WhatsApp después del hero
 │   │   └── Footer.astro      # Pie de página institucional y enlaces rápidos
 │   ├── layouts/
 │   │   └── Layout.astro      # Estructura HTML5 base con SEO (OG, canonical, descriptivo)

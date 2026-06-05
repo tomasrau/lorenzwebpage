@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import ValueProp from '../components/ValueProp.astro';
+import Services from '../components/Services.astro';
+import UseCases from '../components/UseCases.astro';
+import Methodology from '../components/Methodology.astro';
+import Dashboard from '../components/Dashboard.astro';
+import Trust from '../components/Trust.astro';
+import Insights from '../components/Insights.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <!-- Main sticky header -->
+  <Navbar />
+  
+  <!-- Content sections -->
+  <main class="flex-grow">
+    <Hero />
+    <Problem />
+    <ValueProp />
+    <Services />
+    <UseCases />
+    <Methodology />
+    <Dashboard />
+    <Trust />
+    <Insights />
+    <Contact />
+  </main>
+
+  <!-- Global Footer -->
+  <Footer />
+</Layout>

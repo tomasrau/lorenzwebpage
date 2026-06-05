@@ -1,0 +1,359 @@
+---
+// Dashboard.astro
+---
+
+<section id="dashboard-mockup" class="py-20 bg-brand-bg scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Header -->
+    <div class="max-w-3xl mb-12">
+      <span class="text-xs font-semibold uppercase tracking-wider text-brand-accent">Tecnología en Acción</span>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-brand-dark mt-3 mb-6">
+        Información en tiempo real para decidir con certeza.
+      </h2>
+      <p class="text-lg text-brand-slate leading-relaxed">
+        Visualiza un ejemplo de cómo estructuramos y automatizamos los tableros de control financiero e inteligencia de negocio para nuestros clientes.
+      </p>
+    </div>
+
+    <!-- Dashboard Container (Glassmorphic Outer Frame) -->
+    <div class="border border-brand-border-dark rounded-2xl bg-white shadow-xl overflow-hidden max-w-6xl mx-auto">
+      
+      <!-- Top Control Bar (Browser/App bar style) -->
+      <div class="bg-slate-50 border-b border-brand-border-dark px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center space-x-2">
+          <!-- Small dot indicators -->
+          <div class="flex space-x-1.5">
+            <span class="w-3 h-3 rounded-full bg-red-400"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+            <span class="w-3 h-3 rounded-full bg-green-400"></span>
+          </div>
+          <span class="text-xs text-brand-muted font-medium ml-4 font-mono">lorenz-bi-hub.cloud/client-view</span>
+        </div>
+        
+        <!-- Toggle Tabs -->
+        <div class="flex bg-slate-200/60 p-0.5 rounded-lg text-xs font-medium">
+          <button class="dash-toggle active px-3 py-1.5 rounded-md bg-white text-brand-dark font-semibold shadow-xs cursor-pointer transition-all duration-200" data-view="financiero">
+            Control Financiero
+          </button>
+          <button class="dash-toggle px-3 py-1.5 rounded-md text-brand-slate hover:text-brand-dark cursor-pointer transition-all duration-200" data-view="bi">
+            Business Intelligence
+          </button>
+          <button class="dash-toggle px-3 py-1.5 rounded-md text-brand-slate hover:text-brand-dark cursor-pointer transition-all duration-200" data-view="automatizacion">
+            Automatización
+          </button>
+        </div>
+      </div>
+
+      <!-- Main App Layout Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-4 min-h-[500px]">
+        
+        <!-- Dashboard Sidebar (Hidden on mobile for space) -->
+        <aside class="hidden lg:block bg-slate-50 border-r border-brand-border-dark p-6">
+          <div class="space-y-6">
+            <div>
+              <span class="text-[10px] font-bold text-brand-muted uppercase tracking-wider">Menú Principal</span>
+              <nav class="mt-2 space-y-1">
+                <a href="javascript:void(0)" class="flex items-center space-x-2.5 px-3 py-2 text-sm font-semibold rounded-lg bg-brand-accent-light text-brand-accent">
+                  <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                  <span>Dashboard Principal</span>
+                </a>
+                <a href="javascript:void(0)" class="flex items-center space-x-2.5 px-3 py-2 text-sm font-medium rounded-lg text-brand-slate hover:bg-slate-100 hover:text-brand-dark transition-colors">
+                  <span class="w-2 h-2 rounded-full bg-transparent"></span>
+                  <span>Flujo de Caja</span>
+                </a>
+                <a href="javascript:void(0)" class="flex items-center space-x-2.5 px-3 py-2 text-sm font-medium rounded-lg text-brand-slate hover:bg-slate-100 hover:text-brand-dark transition-colors">
+                  <span class="w-2 h-2 rounded-full bg-transparent"></span>
+                  <span>Análisis de Margen</span>
+                </a>
+              </nav>
+            </div>
+
+            <div>
+              <span class="text-[10px] font-bold text-brand-muted uppercase tracking-wider">Sistemas Conectados</span>
+              <div class="mt-3 space-y-2.5">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-brand-slate flex items-center">
+                    <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>ERP Contable
+                  </span>
+                  <span class="text-brand-muted font-mono font-semibold">Listo</span>
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-brand-slate flex items-center">
+                    <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>MercadoPago / Stripe
+                  </span>
+                  <span class="text-brand-muted font-mono font-semibold">Listo</span>
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-brand-slate flex items-center">
+                    <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>GCP BigQuery
+                  </span>
+                  <span class="text-brand-muted font-mono font-semibold">Sincronizado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Dashboard Workspace -->
+        <main class="lg:col-span-3 p-6 sm:p-8 bg-white flex flex-col justify-between">
+          
+          <!-- View 1: Control Financiero -->
+          <div id="view-financiero" class="dash-view-content block space-y-6">
+            <!-- Metric Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div class="p-5 rounded-xl border border-brand-border-dark bg-slate-50">
+                <span class="text-xs font-semibold text-brand-muted uppercase tracking-wider">Caja Disponible</span>
+                <span class="block text-2xl font-bold text-brand-dark mt-1 font-mono">$142,500</span>
+                <span class="inline-flex items-center text-[11px] font-semibold text-green-600 mt-1 bg-green-50 px-1.5 py-0.5 rounded">
+                  +12.4% vs prev. mes
+                </span>
+              </div>
+              <div class="p-5 rounded-xl border border-brand-border-dark bg-slate-50">
+                <span class="text-xs font-semibold text-brand-muted uppercase tracking-wider">Margen Operativo</span>
+                <span class="block text-2xl font-bold text-brand-dark mt-1 font-mono">34.8%</span>
+                <span class="inline-flex items-center text-[11px] font-semibold text-green-600 mt-1 bg-green-50 px-1.5 py-0.5 rounded">
+                  Optimizado (+3.2%)
+                </span>
+              </div>
+              <div class="p-5 rounded-xl border border-brand-border-dark bg-slate-50">
+                <span class="text-xs font-semibold text-brand-muted uppercase tracking-wider">EBITDA Proyectado</span>
+                <span class="block text-2xl font-bold text-brand-dark mt-1 font-mono">$512,000</span>
+                <span class="inline-flex items-center text-[11px] font-semibold text-brand-accent mt-1 bg-teal-50 px-1.5 py-0.5 rounded">
+                  Alcanzable Q4
+                </span>
+              </div>
+            </div>
+
+            <!-- SVG Line Graph Mockup -->
+            <div class="border border-brand-border-dark rounded-xl p-5 bg-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-sm font-semibold text-brand-dark">Cash Flow vs Costos Operativos (U$D)</span>
+                <div class="flex items-center space-x-4 text-xs font-semibold">
+                  <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-brand-accent mr-1.5"></span>Caja Real</span>
+                  <span class="flex items-center"><span class="w-2.5 h-2.5 rounded-full bg-slate-300 mr-1.5"></span>Caja Proyectada</span>
+                </div>
+              </div>
+              
+              <!-- Custom Interactive Graph -->
+              <div class="w-full h-48 flex items-end">
+                <svg class="w-full h-full" viewBox="0 0 500 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Background grid lines -->
+                  <line x1="0" y1="30" x2="500" y2="30" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4"/>
+                  <line x1="0" y1="75" x2="500" y2="75" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4"/>
+                  <line x1="0" y1="120" x2="500" y2="120" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4"/>
+                  
+                  <!-- Area Fill under curve -->
+                  <path d="M 0 130 Q 100 100, 200 90 T 400 40 L 500 20 L 500 150 L 0 150 Z" fill="url(#gradient-teal)" opacity="0.1"/>
+                  
+                  <!-- Trend Line Real -->
+                  <path d="M 0 130 Q 100 100, 200 90 T 350 50" stroke="#0d9488" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                  
+                  <!-- Trend Line Projected -->
+                  <path d="M 350 50 L 420 30 L 500 15" stroke="#94a3b8" stroke-width="3" stroke-dasharray="6" stroke-linecap="round" fill="none"/>
+
+                  <!-- Data Point Dot -->
+                  <circle cx="350" cy="50" r="5" fill="#0d9488" stroke="#ffffff" stroke-width="2"/>
+                  
+                  <!-- Definitions for Gradient -->
+                  <defs>
+                    <linearGradient id="gradient-teal" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#0d9488"/>
+                      <stop offset="100%" stop-color="#ffffff"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <!-- Months Axis -->
+              <div class="flex justify-between text-[11px] text-brand-muted font-mono mt-2 px-1">
+                <span>Ene</span>
+                <span>Feb</span>
+                <span>Mar</span>
+                <span>Abr</span>
+                <span>May (Hoy)</span>
+                <span>Jun (Proj)</span>
+                <span>Jul (Proj)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- View 2: Business Intelligence -->
+          <div id="view-bi" class="dash-view-content hidden space-y-6">
+            <!-- Metric Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div class="p-5 rounded-xl border border-brand-border-dark bg-slate-50">
+                <span class="text-xs font-semibold text-brand-muted uppercase tracking-wider">Clientes Activos</span>
+                <span class="block text-2xl font-bold text-brand-dark mt-1 font-mono">112</span>
+                <span class="inline-flex items-center text-[11px] font-semibold text-green-600 mt-1 bg-green-50 px-1.5 py-0.5 rounded">
+                  Chur Rate: 1.2% (Excelente)
+                </span>
+              </div>
+              <div class="p-5 rounded-xl border border-brand-border-dark bg-slate-50">
+                <span class="text-xs font-semibold text-brand-muted uppercase tracking-wider">Ticket Promedio</span>
+                <span class="block text-2xl font-bold text-brand-dark mt-1 font-mono">U$D 1,450</span>
+                <span class="inline-flex items-center text-[11px] font-semibold text-green-600 mt-1 bg-green-50 px-1.5 py-0.5 rounded">
+                  +8.5% anual
+                </span>
+              </div>
+              <div class="p-5 rounded-xl border border-brand-border-dark bg-slate-50">
+                <span class="text-xs font-semibold text-brand-muted uppercase tracking-wider">LTV / CAC Ratio</span>
+                <span class="block text-2xl font-bold text-brand-dark mt-1 font-mono">4.8x</span>
+                <span class="inline-flex items-center text-[11px] font-semibold text-brand-accent mt-1 bg-teal-50 px-1.5 py-0.5 rounded">
+                  Eficiencia de Mkt
+                </span>
+              </div>
+            </div>
+
+            <!-- Distribution chart mockup -->
+            <div class="border border-brand-border-dark rounded-xl p-6 bg-white">
+              <h4 class="text-sm font-semibold text-brand-dark mb-4">Contribución de Rentabilidad por Unidad de Negocio</h4>
+              
+              <div class="space-y-4">
+                <!-- Row 1 -->
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-brand-slate">Consultoría Corporativa</span>
+                    <span class="text-brand-dark">52% ($266,240)</span>
+                  </div>
+                  <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-brand-accent h-full rounded-full" style="width: 52%"></div>
+                  </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-brand-slate">Automatización & Software</span>
+                    <span class="text-brand-dark">33% ($168,960)</span>
+                  </div>
+                  <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-brand-accent h-full rounded-full" style="width: 33%"></div>
+                  </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-1">
+                    <span class="text-brand-slate">Licencias Low-Code / AppSheet</span>
+                    <span class="text-brand-dark">15% ($76,800)</span>
+                  </div>
+                  <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-brand-accent h-full rounded-full opacity-60" style="width: 15%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- View 3: Automatización -->
+          <div id="view-automatizacion" class="dash-view-content hidden space-y-6">
+            <!-- Metric Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div class="p-5 rounded-xl border border-brand-border-dark bg-slate-50">
+                <span class="text-xs font-semibold text-brand-muted uppercase tracking-wider">Flujos Activos</span>
+                <span class="block text-2xl font-bold text-brand-dark mt-1 font-mono">24</span>
+                <span class="inline-flex items-center text-[11px] font-semibold text-green-600 mt-1 bg-green-50 px-1.5 py-0.5 rounded">
+                  Uptime 100%
+                </span>
+              </div>
+              <div class="p-5 rounded-xl border border-brand-border-dark bg-slate-50">
+                <span class="text-xs font-semibold text-brand-muted uppercase tracking-wider">Horas Libres / Mes</span>
+                <span class="block text-2xl font-bold text-brand-dark mt-1 font-mono">180h</span>
+                <span class="inline-flex items-center text-[11px] font-semibold text-green-600 mt-1 bg-green-50 px-1.5 py-0.5 rounded">
+                  Reducción Operativa
+                </span>
+              </div>
+              <div class="p-5 rounded-xl border border-brand-border-dark bg-slate-50">
+                <span class="text-xs font-semibold text-brand-muted uppercase tracking-wider">Costo Ahorrado</span>
+                <span class="block text-2xl font-bold text-brand-dark mt-1 font-mono">$3,600 / mes</span>
+                <span class="inline-flex items-center text-[11px] font-semibold text-brand-accent mt-1 bg-teal-50 px-1.5 py-0.5 rounded">
+                  ROI: 300%+
+                </span>
+              </div>
+            </div>
+
+            <!-- Activity Logs / Executions List -->
+            <div class="border border-brand-border-dark rounded-xl p-5 bg-white">
+              <h4 class="text-sm font-semibold text-brand-dark mb-3">Últimas Automatizaciones Ejecutadas</h4>
+              
+              <div class="divide-y divide-slate-100 font-mono text-xs max-h-48 overflow-y-auto">
+                <div class="py-2.5 flex items-center justify-between">
+                  <span class="text-brand-slate flex items-center">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
+                    Sincronización Stripe -> BigQuery
+                  </span>
+                  <span class="text-brand-muted">Hace 4 min</span>
+                </div>
+                <div class="py-2.5 flex items-center justify-between">
+                  <span class="text-brand-slate flex items-center">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
+                    Conciliación Bancaria y Cierre Diario
+                  </span>
+                  <span class="text-brand-muted">Hace 12 min</span>
+                </div>
+                <div class="py-2.5 flex items-center justify-between">
+                  <span class="text-brand-slate flex items-center">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
+                    Alerta de desvío presupuestario enviada a Slack
+                  </span>
+                  <span class="text-brand-muted">Hace 1 hora</span>
+                </div>
+                <div class="py-2.5 flex items-center justify-between">
+                  <span class="text-brand-slate flex items-center">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
+                    Actualización de Dashboard Looker Studio
+                  </span>
+                  <span class="text-brand-muted">Hace 3 horas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Log Footer -->
+          <div class="mt-6 border-t border-brand-border pt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-brand-muted">
+            <div class="flex items-center space-x-1.5">
+              <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span>Todos los sistemas operativos</span>
+            </div>
+            <span>Actualizado hace 3 minutos</span>
+          </div>
+        </main>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const toggles = document.querySelectorAll('.dash-toggle');
+  const views = document.querySelectorAll('.dash-view-content');
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      // Deactivate all toggles
+      toggles.forEach(t => {
+        t.classList.remove('active', 'bg-white', 'text-brand-dark', 'font-semibold', 'shadow-xs');
+        t.classList.add('text-brand-slate');
+      });
+
+      // Activate clicked toggle
+      toggle.classList.add('active', 'bg-white', 'text-brand-dark', 'font-semibold', 'shadow-xs');
+      toggle.classList.remove('text-brand-slate');
+
+      // Hide all views
+      views.forEach(view => {
+        view.classList.add('hidden');
+        view.classList.remove('block');
+      });
+
+      // Show target view
+      const viewId = toggle.getAttribute('data-view');
+      if (viewId) {
+        const activeView = document.getElementById(`view-${viewId}`);
+        if (activeView) {
+          activeView.classList.remove('hidden');
+          activeView.classList.add('block');
+        }
+      }
+    });
+  });
+</script>

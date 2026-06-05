@@ -1,0 +1,56 @@
+---
+// Footer.astro
+---
+
+<footer class="bg-brand-dark text-white pt-16 pb-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-slate-800">
+      
+      <!-- Brand & Description -->
+      <div class="lg:col-span-5 space-y-4">
+        <div class="flex items-center space-x-2">
+          <span class="w-8 h-8 rounded-lg bg-brand-accent flex items-center justify-center text-white font-bold text-lg">L</span>
+          <span class="font-display font-semibold text-xl tracking-tight text-white">Lorenz</span>
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+          Tecnología financiera, inteligencia de datos y estrategia para pymes y empresas de servicios que necesitan decidir mejor.
+        </p>
+      </div>
+
+      <!-- Quick Navigation -->
+      <div class="lg:col-span-3 space-y-3.5">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Navegación</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="#top" class="hover:text-brand-accent transition-colors">Inicio</a></li>
+          <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Servicios</a></li>
+          <li><a href="#soluciones" class="hover:text-brand-accent transition-colors">Soluciones</a></li>
+          <li><a href="#metodologia" class="hover:text-brand-accent transition-colors">Metodología</a></li>
+          <li><a href="#casos" class="hover:text-brand-accent transition-colors">Casos de Uso</a></li>
+        </ul>
+      </div>
+
+      <!-- Services List -->
+      <div class="lg:col-span-4 space-y-3.5">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Servicios</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Inteligencia Financiera</a></li>
+          <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Business Intelligence & Dashboards</a></li>
+          <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Automatización de Procesos</a></li>
+          <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Arquitectura de Datos (GCP/BigQuery)</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div>
+        &copy; {new Date().getFullYear()} Lorenz. Todos los derechos reservados.
+      </div>
+      <div class="flex space-x-6">
+        <a href="javascript:void(0)" class="hover:text-slate-400 transition-colors">Política de Privacidad</a>
+        <a href="javascript:void(0)" class="hover:text-slate-400 transition-colors">Términos de Servicio</a>
+      </div>
+    </div>
+  </div>
+</footer>

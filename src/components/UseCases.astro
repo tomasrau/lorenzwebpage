@@ -1,0 +1,242 @@
+---
+// UseCases.astro
+---
+
+<section id="casos" class="py-20 bg-brand-bg scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Header -->
+    <div class="max-w-3xl mb-12">
+      <span class="text-xs font-semibold uppercase tracking-wider text-brand-accent">Casos de Uso</span>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-brand-dark mt-3 mb-6">
+        Diseñamos soluciones para cada nivel de necesidad.
+      </h2>
+      <p class="text-lg text-brand-slate leading-relaxed">
+        Explora cómo aplicamos tecnología y finanzas para resolver problemas de reporting, control y procesos según tu tipo de negocio.
+      </p>
+    </div>
+
+    <!-- Tabs Container -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Tabs Navigation (Left/Top) -->
+      <div class="lg:col-span-4 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible space-x-4 lg:space-x-0 lg:space-y-3 pb-4 lg:pb-0 border-b lg:border-b-0 border-brand-border-dark scrollbar-none">
+        <button class="usecase-tab active inline-flex items-center px-4 py-3 text-sm font-semibold rounded-lg border border-brand-border-dark bg-white text-brand-accent shadow-xs whitespace-nowrap cursor-pointer transition-all duration-200" data-target="servicios-emp">
+          Empresas de Servicios
+        </button>
+        <button class="usecase-tab inline-flex items-center px-4 py-3 text-sm font-medium rounded-lg border border-transparent text-brand-slate hover:bg-slate-100 whitespace-nowrap cursor-pointer transition-all duration-200" data-target="pyme-com">
+          Pymes Comerciales
+        </button>
+        <button class="usecase-tab inline-flex items-center px-4 py-3 text-sm font-medium rounded-lg border border-transparent text-brand-slate hover:bg-slate-100 whitespace-nowrap cursor-pointer transition-all duration-200" data-target="direccion-eq">
+          Equipos de Dirección
+        </button>
+        <button class="usecase-tab inline-flex items-center px-4 py-3 text-sm font-medium rounded-lg border border-transparent text-brand-slate hover:bg-slate-100 whitespace-nowrap cursor-pointer transition-all duration-200" data-target="estudios-cont">
+          Estudios Contables
+        </button>
+      </div>
+
+      <!-- Tab Content Panels (Right) -->
+      <div class="lg:col-span-8 bg-white border border-brand-border-dark rounded-xl p-8 shadow-xs relative">
+        
+        <!-- Panel 1: Empresas de Servicios -->
+        <div id="servicios-emp" class="usecase-panel block animate-fade-in-fast">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <span class="px-3 py-1 rounded-full bg-teal-50 text-brand-accent text-xs font-semibold uppercase tracking-wider">Agencias, Software Houses & Consultoras</span>
+            <div class="text-sm text-brand-muted">Caso de estudio real</div>
+          </div>
+          <h3 class="text-2xl font-bold text-brand-dark mb-4">Control de horas cargadas y rentabilidad real por proyecto</h3>
+          <p class="text-base text-brand-slate mb-6 leading-relaxed">
+            Una agencia de desarrollo de software con 50+ profesionales perdía margen de ganancia debido a la falta de trazabilidad en las horas asignadas frente al presupuesto cotizado de cada cliente.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 border-t border-brand-border pt-6">
+            <div>
+              <h4 class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">La Solución</h4>
+              <p class="text-sm text-brand-slate leading-relaxed">
+                Conectamos Jira/Toggl a un data lake en BigQuery y estructuramos un dashboard ejecutivo en Looker Studio. Automatizamos alertas semanales por desvíos en Slack.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">El Impacto</h4>
+              <ul class="space-y-1.5">
+                <li class="flex items-center text-sm font-semibold text-brand-dark">
+                  <svg class="w-4 h-4 text-brand-accent mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                  +14% margen de rentabilidad
+                </li>
+                <li class="flex items-center text-sm font-semibold text-brand-dark">
+                  <svg class="w-4 h-4 text-brand-accent mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                  Reducción a 0 en desvíos críticos
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Pymes Comerciales -->
+        <div id="pyme-com" class="usecase-panel hidden animate-fade-in-fast">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <span class="px-3 py-1 rounded-full bg-teal-50 text-brand-accent text-xs font-semibold uppercase tracking-wider">Retail & E-commerce</span>
+            <div class="text-sm text-brand-muted">Caso de estudio real</div>
+          </div>
+          <h3 class="text-2xl font-bold text-brand-dark mb-4">Conciliación diaria automatizada de pasarelas de pago y bancos</h3>
+          <p class="text-base text-brand-slate mb-6 leading-relaxed">
+            Una pyme con múltiples sucursales físicas y un e-commerce sufría de errores diarios en la conciliación de tarjetas de crédito, Mercado Pago y depósitos bancarios, requiriendo 2 empleados de administración a tiempo completo.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 border-t border-brand-border pt-6">
+            <div>
+              <h4 class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">La Solución</h4>
+              <p class="text-sm text-brand-slate leading-relaxed">
+                Desarrollamos flujos en Make para extraer las liquidaciones de cobro, cruzarlas automáticamente con los movimientos bancarios en BigQuery y reportar diferencias vía email.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">El Impacto</h4>
+              <ul class="space-y-1.5">
+                <li class="flex items-center text-sm font-semibold text-brand-dark">
+                  <svg class="w-4 h-4 text-brand-accent mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                  25 horas mensuales ahorradas por persona
+                </li>
+                <li class="flex items-center text-sm font-semibold text-brand-dark">
+                  <svg class="w-4 h-4 text-brand-accent mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                  99.8% de precisión en cuentas a cobrar
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Equipos de Dirección -->
+        <div id="direccion-eq" class="usecase-panel hidden animate-fade-in-fast">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <span class="px-3 py-1 rounded-full bg-teal-50 text-brand-accent text-xs font-semibold uppercase tracking-wider">C-Suite & Directorios</span>
+            <div class="text-sm text-brand-muted">Caso de estudio real</div>
+          </div>
+          <h3 class="text-2xl font-bold text-brand-dark mb-4">Consolidado financiero instantáneo de un holding de empresas</h3>
+          <p class="text-base text-brand-slate mb-6 leading-relaxed">
+            Un grupo empresario con 3 unidades de negocio independientes dedicaba la primera quincena de cada mes a consolidar balances en Excel para el directorio, impidiendo una reacción ágil del mercado.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 border-t border-brand-border pt-6">
+            <div>
+              <h4 class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">La Solución</h4>
+              <p class="text-sm text-brand-slate leading-relaxed">
+                Diseñamos una arquitectura que extrae datos de los ERPs de cada sociedad, aplica el modelo de eliminación intercompany en GCP y disponibiliza un reporte interactivo consolidado.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">El Impacto</h4>
+              <ul class="space-y-1.5">
+                <li class="flex items-center text-sm font-semibold text-brand-dark">
+                  <svg class="w-4 h-4 text-brand-accent mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                  Visión consolidated el día 1 de cada mes
+                </li>
+                <li class="flex items-center text-sm font-semibold text-brand-dark">
+                  <svg class="w-4 h-4 text-brand-accent mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                  Alineación instantánea de presupuestos
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Estudios Contables -->
+        <div id="estudios-cont" class="usecase-panel hidden animate-fade-in-fast">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <span class="px-3 py-1 rounded-full bg-teal-50 text-brand-accent text-xs font-semibold uppercase tracking-wider">Estudios Contables & Tributarios</span>
+            <div class="text-sm text-brand-muted">Caso de estudio real</div>
+          </div>
+          <h3 class="text-2xl font-bold text-brand-dark mb-4">Digitalización del reporting financiero para clientes VIP</h3>
+          <p class="text-base text-brand-slate mb-6 leading-relaxed">
+            Un estudio contable deseaba ofrecer un servicio premium de consultoría financiera además del cumplimiento fiscal habitual, pero no lograba escalar por la carga horaria de crear reportes mensuales uno por uno.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 border-t border-brand-border pt-6">
+            <div>
+              <h4 class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">La Solución</h4>
+              <p class="text-sm text-brand-slate leading-relaxed">
+                Estructuramos un portal contable dinámico en Looker Studio y diseñamos una base de datos centralizada. Capacitamos al estudio para nutrirla mensualmente.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-2">El Impacto</h4>
+              <ul class="space-y-1.5">
+                <li class="flex items-center text-sm font-semibold text-brand-dark">
+                  <svg class="w-4 h-4 text-brand-accent mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                  Nueva línea de ingresos (Consultoría de Gestión)
+                </li>
+                <li class="flex items-center text-sm font-semibold text-brand-dark">
+                  <svg class="w-4 h-4 text-brand-accent mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                  Fidelización del 95% de clientes corporativos
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInFast {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-fast {
+    animation: fadeInFast 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  const tabs = document.querySelectorAll('.usecase-tab');
+  const panels = document.querySelectorAll('.usecase-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Deactivate current active tab
+      tabs.forEach(t => {
+        t.classList.remove('active', 'text-brand-accent', 'bg-white', 'border-brand-border-dark', 'shadow-xs');
+        t.classList.add('text-brand-slate', 'border-transparent', 'hover:bg-slate-100');
+        t.classList.remove('font-semibold');
+        t.classList.add('font-medium');
+      });
+
+      // Activate clicked tab
+      tab.classList.add('active', 'text-brand-accent', 'bg-white', 'border-brand-border-dark', 'shadow-xs');
+      tab.classList.remove('text-brand-slate', 'border-transparent', 'hover:bg-slate-100');
+      tab.classList.remove('font-medium');
+      tab.classList.add('font-semibold');
+
+      // Hide all panels
+      panels.forEach(panel => {
+        panel.classList.add('hidden');
+        panel.classList.remove('block');
+      });
+
+      // Show targeted panel
+      const targetId = tab.getAttribute('data-target');
+      if (targetId) {
+        const activePanel = document.getElementById(targetId);
+        if (activePanel) {
+          activePanel.classList.remove('hidden');
+          activePanel.classList.add('block');
+        }
+      }
+    });
+  });
+</script>

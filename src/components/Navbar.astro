@@ -1,0 +1,154 @@
+---
+// Navbar.astro
+---
+
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
+  <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#top" class="flex items-center space-x-2 group">
+      <span class="w-8 h-8 rounded-lg bg-brand-accent flex items-center justify-center text-white font-bold text-lg shadow-sm transition-transform duration-300 group-hover:scale-105">L</span>
+      <span class="font-display font-semibold text-xl tracking-tight text-brand-dark transition-colors duration-300 group-hover:text-brand-accent">Lorenz</span>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="#servicios" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Servicios</a>
+      <a href="#soluciones" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Soluciones</a>
+      <a href="#metodologia" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Metodología</a>
+      <a href="#casos" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Casos de Uso</a>
+      <a href="#insights" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Research</a>
+      <a href="#contacto" class="text-sm font-medium text-brand-slate hover:text-brand-accent transition-colors duration-200">Contacto</a>
+    </nav>
+
+    <!-- CTAs -->
+    <div class="hidden md:flex items-center space-x-4">
+      <a href="#contacto" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg text-white bg-brand-accent hover:bg-brand-accent-hover transition-colors duration-200 shadow-sm">
+        Solicitar diagnóstico
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-slate hover:text-brand-accent hover:bg-slate-50 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-accent" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b border-brand-border shadow-lg transition-all duration-300 ease-in-out opacity-0 translate-y-[-10px]">
+    <nav class="flex flex-col px-6 py-6 space-y-4">
+      <a href="#servicios" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Servicios</a>
+      <a href="#soluciones" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Soluciones</a>
+      <a href="#metodologia" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Metodología</a>
+      <a href="#casos" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Casos de Uso</a>
+      <a href="#insights" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Research</a>
+      <a href="#contacto" class="mobile-nav-link text-base font-medium text-brand-slate hover:text-brand-accent transition-colors py-2 border-b border-slate-50">Contacto</a>
+      
+      <a href="#contacto" class="mobile-nav-link inline-flex items-center justify-center w-full px-4 py-3 text-base font-medium rounded-lg text-white bg-brand-accent hover:bg-brand-accent-hover transition-colors shadow-sm mt-4">
+        Solicitar diagnóstico
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* Header default large size */
+  header {
+    height: 80px;
+    background-color: rgba(252, 252, 253, 0); /* Starts transparent */
+  }
+
+  /* Sticky animations with scroll-driven timelines */
+  @supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+    @keyframes shrink-header {
+      to {
+        height: 56px;
+        background-color: rgba(252, 252, 253, 0.85);
+        backdrop-filter: blur(12px);
+        border-color: var(--color-brand-border-dark);
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+      }
+    }
+
+    header {
+      animation: shrink-header auto linear both;
+      animation-timeline: scroll(block root);
+      animation-range: 0px 80px;
+    }
+  }
+</style>
+
+<script>
+  // Fallback for browsers that don't support scroll-driven animations
+  if (!CSS.supports('(animation-timeline: scroll()) and (animation-range: 0% 100%)')) {
+    const header = document.getElementById('main-header');
+    const scrollDistance = 80;
+
+    window.addEventListener('scroll', () => {
+      if (!header) return;
+      const scrollY = window.scrollY;
+      const progress = Math.min(1, scrollY / scrollDistance);
+
+      if (progress > 0) {
+        header.style.height = `${80 - (24 * progress)}px`;
+        header.style.backgroundColor = `rgba(252, 252, 253, ${0.85 * progress})`;
+        header.style.backdropFilter = `blur(${12 * progress}px)`;
+        header.style.borderColor = `rgba(226, 232, 240, ${progress})`;
+        header.style.boxShadow = `0 4px 20px -2px rgba(0, 0, 0, ${0.03 * progress})`;
+      } else {
+        header.style.height = '80px';
+        header.style.backgroundColor = 'rgba(252, 252, 253, 0)';
+        header.style.backdropFilter = 'none';
+        header.style.borderColor = 'transparent';
+        header.style.boxShadow = 'none';
+      }
+    });
+  }
+
+  // Mobile Menu Toggle
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function toggleMenu() {
+    if (!menuBtn || !menu || !hamburgerIcon || !closeIcon) return;
+
+    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+
+    if (!isExpanded) {
+      // Open
+      menu.classList.remove('hidden');
+      setTimeout(() => {
+        menu.classList.remove('opacity-0', 'translate-y-[-10px]');
+        menu.classList.add('opacity-100', 'translate-y-0');
+      }, 10);
+      hamburgerIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      // Close
+      menu.classList.remove('opacity-100', 'translate-y-0');
+      menu.classList.add('opacity-0', 'translate-y-[-10px]');
+      hamburgerIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      setTimeout(() => {
+        menu.classList.add('hidden');
+      }, 300);
+    }
+  }
+
+  menuBtn?.addEventListener('click', toggleMenu);
+
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (menu && !menu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+  });
+</script>

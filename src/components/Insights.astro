@@ -1,0 +1,77 @@
+---
+// Insights.astro
+---
+
+<section id="insights" class="py-20 bg-white border-y border-brand-border-dark scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div class="max-w-3xl">
+        <span class="text-xs font-semibold uppercase tracking-wider text-brand-accent">Insights & Research</span>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-brand-dark mt-3 mb-4">
+          Criterio financiero y técnico documentado.
+        </h2>
+        <p class="text-base text-brand-slate leading-relaxed">
+          Escribimos sobre control de gestión, automatización de procesos y analítica de datos en el mundo real. Sin humo, directo al grano.
+        </p>
+      </div>
+      <div>
+        <a href="#contacto" class="inline-flex items-center text-sm font-semibold text-brand-accent hover:text-brand-accent-hover transition-colors">
+          Ver todas las publicaciones
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Insights Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Article 1 -->
+      <article class="flex flex-col p-6 rounded-xl bg-brand-bg border border-brand-border hover:border-slate-300 transition-all duration-300">
+        <div class="flex items-center space-x-2 text-xs font-semibold text-brand-accent mb-4">
+          <span>Automatización</span>
+          <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+          <span class="text-brand-muted font-normal">Lectura de 6 min</span>
+        </div>
+        <h3 class="text-lg font-bold text-brand-dark mb-3 line-clamp-2 hover:text-brand-accent transition-colors">
+          <a href="javascript:void(0)">El ROI de automatizar conciliaciones bancarias en Pymes de servicios</a>
+        </h3>
+        <p class="text-sm text-brand-slate leading-relaxed mb-6 flex-grow line-clamp-3">
+          Analizamos el impacto de implementar flujos automatizados con APIs en lugar de carga administrativa manual. Horas recuperadas, reducción de errores y costos reales.
+        </p>
+        <span class="text-xs text-brand-muted font-mono mt-auto">Junio 2026</span>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="flex flex-col p-6 rounded-xl bg-brand-bg border border-brand-border hover:border-slate-300 transition-all duration-300">
+        <div class="flex items-center space-x-2 text-xs font-semibold text-brand-accent mb-4">
+          <span>Business Intelligence</span>
+          <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+          <span class="text-brand-muted font-normal">Lectura de 8 min</span>
+        </div>
+        <h3 class="text-lg font-bold text-brand-dark mb-3 line-clamp-2 hover:text-brand-accent transition-colors">
+          <a href="javascript:void(0)">Cómo estructurar tu plan de cuentas contables para habilitar reportes BI automáticos</a>
+        </h3>
+        <p class="text-sm text-brand-slate leading-relaxed mb-6 flex-grow line-clamp-3">
+          El talón de Aquiles de Looker Studio y Power BI suele ser una base contable inconsistente. Te explicamos los criterios de ordenamiento para cruzar datos financieros limpios.
+        </p>
+        <span class="text-xs text-brand-muted font-mono mt-auto">Mayo 2026</span>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="flex flex-col p-6 rounded-xl bg-brand-bg border border-brand-border hover:border-slate-300 transition-all duration-300">
+        <div class="flex items-center space-x-2 text-xs font-semibold text-brand-accent mb-4">
+          <span>Data Infrastructure</span>
+          <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+          <span class="text-brand-muted font-normal">Lectura de 5 min</span>
+        </div>
+        <h3 class="text-lg font-bold text-brand-dark mb-3 line-clamp-2 hover:text-brand-accent transition-colors">
+          <a href="javascript:void(0)">BigQuery vs Hojas de Cálculo: Cuándo migrar la infraestructura de datos de tu Pyme</a>
+        </h3>
+        <p class="text-sm text-brand-slate leading-relaxed mb-6 flex-grow line-clamp-3">
+          Identifica las señales operativas claras que indican que tu hoja de cálculo consolidada está al borde del colapso y cómo realizar una transición segura a un data warehouse.
+        </p>
+        <span class="text-xs text-brand-muted font-mono mt-auto">Mayo 2026</span>
+      </article>
+    </div>
+  </div>
+</section>

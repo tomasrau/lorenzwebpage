@@ -1,0 +1,160 @@
+---
+// Contact.astro
+---
+
+<section id="contacto" class="py-20 bg-brand-bg scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Info Left Panel -->
+      <div class="lg:col-span-5 space-y-6">
+        <span class="text-xs font-semibold uppercase tracking-wider text-brand-accent">Contacto y Diagnóstico</span>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-brand-dark">
+          Inicia tu diagnóstico financiero y operativo.
+        </h2>
+        <p class="text-base text-brand-slate leading-relaxed">
+          Completa el formulario y analizaremos tu situación actual sin costo. Nos pondremos en contacto en menos de 24 horas hábiles para coordinar una reunión de diagnóstico de 30 minutos.
+        </p>
+
+        <div class="space-y-4 pt-4 border-t border-brand-border-dark">
+          <!-- Contact Detail 1 -->
+          <div class="flex items-start space-x-3.5">
+            <div class="text-brand-accent mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-brand-dark">Email Corporativo</h4>
+              <p class="text-xs text-brand-muted mt-0.5">contacto@lorenz.systems</p>
+            </div>
+          </div>
+
+          <!-- Contact Detail 2 -->
+          <div class="flex items-start space-x-3.5">
+            <div class="text-brand-accent mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-brand-dark">Reunión Virtual</h4>
+              <p class="text-xs text-brand-muted mt-0.5">Disponibilidad en Google Meet o Zoom</p>
+            </div>
+          </div>
+
+          <!-- Contact Detail 3 -->
+          <div class="flex items-start space-x-3.5">
+            <div class="text-brand-accent mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-brand-dark">Tiempo de Respuesta</h4>
+              <p class="text-xs text-brand-muted mt-0.5">Menos de 24 horas hábiles garantizado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form Right Panel (Card) -->
+      <div class="lg:col-span-7">
+        <div class="bg-white border border-brand-border-dark rounded-xl p-8 shadow-xs">
+          <!-- Form Header -->
+          <h3 class="text-xl font-bold text-brand-dark mb-6">Solicitud de Diagnóstico</h3>
+          
+          <!-- Contact Form. Target action can be configured to Formspree, Make, n8n, etc. -->
+          <form id="contact-form" action="#" method="POST" class="space-y-4">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Name Input -->
+              <div>
+                <label for="name" class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Nombre Completo *</label>
+                <input type="text" id="name" name="name" required class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-bg border border-brand-border-dark text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all" placeholder="Ej. Juan Pérez" />
+              </div>
+              
+              <!-- Email Input -->
+              <div>
+                <label for="email" class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Email Corporativo *</label>
+                <input type="email" id="email" name="email" required class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-bg border border-brand-border-dark text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all" placeholder="Ej. juan@empresa.com" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Company Input -->
+              <div>
+                <label for="company" class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Empresa / Negocio *</label>
+                <input type="text" id="company" name="company" required class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-bg border border-brand-border-dark text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all" placeholder="Ej. Servicorp S.A." />
+              </div>
+              
+              <!-- Role Input -->
+              <div>
+                <label for="role" class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Tu Cargo / Posición</label>
+                <input type="text" id="role" name="role" class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-bg border border-brand-border-dark text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all" placeholder="Ej. Director de Finanzas" />
+              </div>
+            </div>
+
+            <!-- Service of Interest Select -->
+            <div>
+              <label for="service-interest" class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">Servicio de Interés Principal</label>
+              <select id="service-interest" name="service" class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-bg border border-brand-border-dark text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all">
+                <option value="inteligencia-financiera">Inteligencia Financiera & Control de Gestión</option>
+                <option value="business-intelligence">Business Intelligence & Dashboards</option>
+                <option value="automatizacion">Automatización de Procesos Administrativos</option>
+                <option value="arquitectura-datos">Arquitectura de Datos & BigQuery</option>
+                <option value="consultoria-lowcode">Consultoría Tecnológica & Low-Code</option>
+                <option value="otro">Otro Desafío Financiero / Tecnológico</option>
+              </select>
+            </div>
+
+            <!-- Message Area -->
+            <div>
+              <label for="message" class="block text-xs font-semibold text-brand-slate uppercase tracking-wider mb-1.5">¿Cuál es tu principal desafío actual? *</label>
+              <textarea id="message" name="message" rows="4" required class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-bg border border-brand-border-dark text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all resize-none" placeholder="Cuéntanos brevemente cómo gestionas tus datos o finanzas hoy y qué te gustaría mejorar..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-semibold rounded-lg text-white bg-brand-accent hover:bg-brand-accent-hover transition-colors shadow-sm cursor-pointer">
+              Enviar solicitud de diagnóstico
+            </button>
+          </form>
+
+          <!-- Success Alert Message (Hidden initially) -->
+          <div id="form-success-alert" class="hidden mt-4 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800 text-sm">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span class="font-bold">¡Solicitud recibida!</span>
+            </div>
+            <p class="mt-1 text-xs text-green-700">Analizaremos tus datos de contacto y te enviaremos una propuesta de agenda en menos de 24 horas hábiles. ¡Gracias!</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  // Simple client-side form validation and success message simulation
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const successAlert = document.getElementById('form-success-alert');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // In a real application, you would perform an asynchronous fetch submit here.
+    // Example:
+    // fetch(form.action, { method: form.method, body: new FormData(form) })
+    
+    // Simulate successful submit
+    form.reset();
+    if (successAlert) {
+      successAlert.classList.remove('hidden');
+      setTimeout(() => {
+        successAlert.classList.add('hidden');
+      }, 7000); // Hide after 7s
+    }
+  });
+</script>

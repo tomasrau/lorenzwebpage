@@ -67,7 +67,7 @@ const sitemapUrl = new URL(`${baseUrl}sitemap.xml`, Astro.site).href;
       (() => {
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const revealTargets = document.querySelectorAll(
-          'section:not(#hero) h2, section:not(#hero) h3, section:not(#hero) article, section:not(#hero) .rounded-xl, section:not(#hero) .rounded-2xl'
+          'section:not(#hero):not(#enfoque) h2, section:not(#hero):not(#enfoque) h3, section:not(#hero):not(#enfoque) article, section:not(#hero):not(#enfoque) .rounded-xl, section:not(#hero):not(#enfoque) .rounded-2xl'
         );
 
         revealTargets.forEach((element, index) => {

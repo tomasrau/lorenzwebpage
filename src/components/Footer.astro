@@ -1,5 +1,7 @@
 ---
 // Footer.astro
+const homeUrl = `${import.meta.env.BASE_URL}/`;
+const privacyUrl = `${homeUrl}privacidad/`;
 ---
 
 <footer class="bg-brand-dark text-white pt-16 pb-12">
@@ -21,11 +23,11 @@
       <div class="lg:col-span-3 space-y-3.5">
         <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Navegación</h4>
         <ul class="space-y-2 text-sm text-slate-400">
-          <li><a href="#top" class="hover:text-brand-accent transition-colors">Inicio</a></li>
-          <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Servicios</a></li>
-          <li><a href="#soluciones" class="hover:text-brand-accent transition-colors">Soluciones</a></li>
-          <li><a href="#metodologia" class="hover:text-brand-accent transition-colors">Metodología</a></li>
-          <li><a href="#casos" class="hover:text-brand-accent transition-colors">Casos de Uso</a></li>
+          <li><a href={`${homeUrl}#top`} class="hover:text-brand-accent transition-colors">Inicio</a></li>
+          <li><a href={`${homeUrl}#servicios`} class="hover:text-brand-accent transition-colors">Servicios</a></li>
+          <li><a href={`${homeUrl}#soluciones`} class="hover:text-brand-accent transition-colors">Soluciones</a></li>
+          <li><a href={`${homeUrl}#metodologia`} class="hover:text-brand-accent transition-colors">Metodología</a></li>
+          <li><a href={`${homeUrl}#casos`} class="hover:text-brand-accent transition-colors">Casos de Uso</a></li>
         </ul>
       </div>
 
@@ -33,10 +35,10 @@
       <div class="lg:col-span-4 space-y-3.5">
         <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Servicios</h4>
         <ul class="space-y-2 text-sm text-slate-400">
-          <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Inteligencia Financiera</a></li>
-          <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Business Intelligence & Dashboards</a></li>
-          <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Automatización de Procesos</a></li>
-          <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Arquitectura de Datos (GCP/BigQuery)</a></li>
+          <li><a href={`${homeUrl}#servicios`} class="hover:text-brand-accent transition-colors">Inteligencia Financiera</a></li>
+          <li><a href={`${homeUrl}#servicios`} class="hover:text-brand-accent transition-colors">Business Intelligence & Dashboards</a></li>
+          <li><a href={`${homeUrl}#servicios`} class="hover:text-brand-accent transition-colors">Automatización de Procesos</a></li>
+          <li><a href={`${homeUrl}#servicios`} class="hover:text-brand-accent transition-colors">Arquitectura de Datos (GCP/BigQuery)</a></li>
         </ul>
       </div>
 
@@ -48,8 +50,8 @@
         &copy; {new Date().getFullYear()} Lorenz. Todos los derechos reservados.
       </div>
       <div class="flex space-x-6">
-        <a href="javascript:void(0)" class="hover:text-slate-400 transition-colors">Política de Privacidad</a>
-        <a href="javascript:void(0)" class="hover:text-slate-400 transition-colors">Términos de Servicio</a>
+        <a href={privacyUrl} class="hover:text-slate-400 transition-colors">Política de Privacidad</a>
+        <a href="mailto:contacto@lorenz.systems" class="hover:text-slate-400 transition-colors">contacto@lorenz.systems</a>
       </div>
     </div>
   </div>

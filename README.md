@@ -4,7 +4,7 @@ Sitio web institucional de alta gama para **Lorenz** (Consultoría en Tecnologí
 
 ## 🛠️ Stack Tecnológico
 
-- **Framework:** [Astro v5](https://astro.build/)
+- **Framework:** [Astro v6](https://astro.build/)
 - **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
 - **Despliegue:** [GitHub Pages](https://pages.github.com/) (sitio estático completo)
@@ -43,6 +43,12 @@ Todos los comandos deben ser ejecutados en la raíz del proyecto con el entorno 
 | `npm run build` | Compila el sitio y genera los archivos estáticos listos para producción en `./dist/` |
 | `npm run preview` | Permite previsualizar localmente la compilación de producción |
 | `npm run astro -- --help` | Obtiene ayuda sobre el CLI de Astro |
+
+## Formulario de contacto
+
+El formulario utiliza el endpoint AJAX de FormSubmit para enviar las solicitudes a `contacto@lorenz.systems`.
+
+La primera solicitud enviada requiere confirmar la dirección desde el email de activación de FormSubmit. Hasta completar esa activación, los mensajes no llegarán normalmente a la bandeja de entrada.
 
 ---
 
@@ -102,11 +108,5 @@ export default defineConfig({
    git commit -m "feat: implement initial premium institutional landing page"
    git push origin main
    ```
-2. Configura una **GitHub Action** para compilar y desplegar automáticamente en cada push, o realiza un deploy manual compilando (`npm run build`) y subiendo la carpeta `./dist/` a la rama `gh-pages` utilizando paquetes como `gh-pages`:
-   
-   - **Opción recomendada (GitHub Actions):** Crea un archivo `.github/workflows/deploy.yml` con la plantilla estándar de Astro para GitHub Pages. GitHub se encargará de compilar el sitio y publicarlo automáticamente.
-   - **Opción manual:**
-     ```bash
-     npm install -D gh-pages
-     npx gh-pages -d dist
-     ```
+2. En GitHub, abre **Settings → Pages** y selecciona **GitHub Actions** como fuente de publicación.
+3. Cada push a `main` ejecutará [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), compilará el sitio y publicará `./dist/`.

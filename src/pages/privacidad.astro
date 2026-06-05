@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const homeUrl = `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout
+  title="Política de Privacidad | Lorenz"
+  description="Política de privacidad y tratamiento de datos personales del sitio web de Lorenz."
+>
+  <header class="border-b border-brand-border-dark bg-white">
+    <div class="max-w-4xl mx-auto px-6 py-6">
+      <a href={homeUrl} class="inline-flex items-center gap-2 font-display font-semibold text-xl text-brand-dark hover:text-brand-accent transition-colors">
+        <span class="w-8 h-8 rounded-lg bg-brand-accent flex items-center justify-center text-white font-bold text-lg">L</span>
+        Lorenz
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow bg-brand-bg">
+    <article class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+      <span class="text-xs font-semibold uppercase tracking-wider text-brand-accent">Información legal</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mt-3 mb-4">Política de Privacidad</h1>
+      <p class="text-sm text-brand-muted mb-12">Última actualización: 5 de junio de 2026</p>
+
+      <div class="space-y-10 text-brand-slate leading-relaxed">
+        <section>
+          <h2 class="text-2xl font-bold mb-3">Responsable y alcance</h2>
+          <p>Lorenz utiliza los datos enviados mediante este sitio únicamente para responder consultas, evaluar solicitudes de diagnóstico y coordinar reuniones relacionadas con sus servicios profesionales.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold mb-3">Datos que recopilamos</h2>
+          <p>El formulario de contacto puede solicitar nombre, email corporativo, empresa, cargo, servicio de interés y una descripción del desafío informado por la persona usuaria.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold mb-3">Finalidad y base del tratamiento</h2>
+          <p>Los datos se tratan con el consentimiento otorgado al enviar el formulario. No se venden ni se utilizan para campañas de terceros. Solo se emplean para gestionar la consulta y mantener comunicaciones vinculadas con ella.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold mb-3">Proveedores y conservación</h2>
+          <p>El envío del formulario se procesa mediante FormSubmit, un proveedor externo de formularios para sitios estáticos. La información también puede conservarse en la casilla corporativa de Lorenz durante el tiempo necesario para atender la consulta y cumplir obligaciones aplicables.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold mb-3">Derechos y contacto</h2>
+          <p>Podés solicitar acceso, corrección o eliminación de tus datos escribiendo a <a class="font-semibold text-brand-accent hover:text-brand-accent-hover" href="mailto:contacto@lorenz.systems">contacto@lorenz.systems</a>.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-bold mb-3">Cambios en esta política</h2>
+          <p>Esta política puede actualizarse cuando cambien los servicios, proveedores o requisitos aplicables. La fecha de actualización se indicará al inicio de esta página.</p>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

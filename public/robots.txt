@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tomasrau.github.io/lorenzwebpage/sitemap.xml
+Sitemap: https://lorenz.ar/sitemap.xml

@@ -86,16 +86,15 @@ La primera solicitud enviada requiere confirmar la dirección desde el email de 
 
 ## 🌐 Publicación en GitHub Pages
 
-El sitio está preconfigurado para ser desplegado en GitHub Pages.
+El sitio está preconfigurado para ser desplegado en GitHub Pages con el dominio personalizado `lorenz.ar`.
 
 ### Configuración en `astro.config.mjs`
 
-El archivo de configuración tiene definidos los parámetros `site` y `base` necesarios para resolver correctamente las rutas relativas en el subdirectorio del repositorio:
+El archivo de configuración define el dominio público. Al publicarse desde un dominio personalizado no necesita un subdirectorio `base`:
 
 ```javascript
 export default defineConfig({
-  site: 'https://tomasrau.github.io',
-  base: '/lorenzwebpage',
+  site: 'https://lorenz.ar',
   // ...
 });
 ```
@@ -109,4 +108,5 @@ export default defineConfig({
    git push origin main
    ```
 2. En GitHub, abre **Settings → Pages** y selecciona **GitHub Actions** como fuente de publicación.
-3. Cada push a `main` ejecutará [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), compilará el sitio y publicará `./dist/`.
+3. En **Custom domain**, configura `lorenz.ar` y habilita **Enforce HTTPS** cuando GitHub termine de emitir el certificado.
+4. Cada push a `main` ejecutará [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), compilará el sitio y publicará `./dist/`.

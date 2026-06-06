@@ -124,7 +124,17 @@ import heroBackground from '../media/images/hero-background-persona-laptop-1920x
   .dash-trend svg,.dash-margin svg{width:100%;height:83%}.bar-chart{height:83%;display:flex;align-items:center;justify-content:space-around;border-bottom:1px solid rgba(255,255,255,.12)}.bar-chart i{display:block;width:8%;height:var(--h);background:linear-gradient(to right,#486b84 50%,#8a939a 50%);box-shadow:8px 13px 0 rgba(105,116,124,.35)}
   .dash-donut{display:grid;grid-template-columns:1fr 1fr;align-items:center}.dash-donut .panel-title{grid-column:span 2}.donut{width:70%;aspect-ratio:1;margin:auto;border-radius:50%;background:conic-gradient(#b9c0c5 0 42%,#74818a 42% 70%,#3f596b 70%);display:grid;place-items:center}.donut:before{content:"";width:70%;aspect-ratio:1;border-radius:50%;background:#12181d}.donut span{position:absolute;text-align:center;font-size:clamp(5px,.65vw,12px)}.donut small{display:block;color:rgba(255,255,255,.35);font-size:.65em}.dash-donut ul{display:grid;gap:8%;font-size:clamp(3px,.38vw,7px);color:rgba(255,255,255,.45)}.dash-donut li{display:flex;justify-content:space-between}.dash-donut b{font-weight:500;color:rgba(255,255,255,.7)}
   .dash-profit>div:not(.panel-title){display:grid;grid-template-columns:28% 1fr 16%;gap:3%;align-items:center;margin:8% 0;font-size:clamp(3px,.38vw,7px);color:rgba(255,255,255,.45)}.dash-profit i{height:5px;background:linear-gradient(90deg,#9aa5ac var(--w),rgba(255,255,255,.08) var(--w))}.dash-profit b{font-weight:400;color:rgba(255,255,255,.7)}
-  @media(max-width:900px){.hero-sequence{height:auto}.hero-stage{position:relative;min-height:100svh;padding:8rem 0 5rem}.hero-photo{object-position:62% center}.hero-intro{position:relative;top:auto}.dashboard-scene{position:relative;height:45vw;min-height:260px;margin-top:4rem}.dashboard-shell{left:4%;top:0;width:92%;transform:perspective(1200px) rotateX(4deg) rotateY(8deg) rotateZ(-1deg) scale(.92)}.hero-enter,.hero-exit{display:none}}
+  @media(max-width:900px){
+    .hero-sequence{height:285vh}
+    .hero-stage{position:sticky;height:100svh;min-height:100svh;padding:0}
+    .hero-photo{object-position:63% center;filter:saturate(.58) brightness(.54);transform:scale(1.08)}
+    .hero-shade{background:linear-gradient(180deg,rgba(2,4,7,.74),rgba(2,4,7,.22) 44%,rgba(2,4,7,.7)),radial-gradient(circle at 50% 42%,transparent 0%,rgba(2,4,7,.5) 100%)}
+    .hero-intro{top:11svh;padding-inline:1.25rem;text-align:left}.hero-intro span{font-size:9px;letter-spacing:.14em}.hero-intro h1{font-size:clamp(3rem,15vw,5.6rem);line-height:.9;letter-spacing:-.075em}.hero-intro p{font-size:1rem;max-width:22rem;margin-inline:0}.hero-intro .flex{align-items:flex-start}
+    .dashboard-scene{position:absolute;inset:0;height:auto;margin:0;perspective:1100px}
+    .dashboard-shell{left:50%;top:68%;width:min(108vw,620px);transform:translateX(-50%) translateY(-50%) perspective(1100px) rotateX(8deg) rotateY(0deg) rotateZ(-1deg) scale(.62);filter:drop-shadow(0 28px 38px rgba(0,0,0,.48));opacity:.9}
+    .dashboard-ui{border-radius:13px;grid-template-columns:0 1fr}.dash-sidebar{display:none}.dash-content{padding:4.5%}.dash-kpis{grid-template-columns:repeat(2,1fr)}.dash-kpis article:nth-child(n+3){display:none}.dash-grid{height:64%;grid-template-columns:1fr;grid-template-rows:1fr}.dash-trend{grid-column:auto}.dash-bars,.dash-donut,.dash-profit,.dash-margin{display:none}
+    .hero-enter{bottom:1.5rem}.hero-exit{display:block}
+  }
   @media(prefers-reduced-motion:reduce){.hero-sequence{height:auto}.hero-stage{position:relative;min-height:100vh}.dashboard-shell{transform:none}}
 </style>
 
@@ -136,6 +146,7 @@ import heroBackground from '../media/images/hero-background-persona-laptop-1920x
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const desktop = window.matchMedia('(min-width: 901px)');
+  const mobile = window.matchMedia('(max-width: 900px)');
 
   if (!reduceMotion && desktop.matches) {
     const timeline = gsap.timeline({
@@ -174,5 +185,39 @@ import heroBackground from '../media/images/hero-background-persona-laptop-1920x
       .to('.hero-photo', { opacity: 0, duration: .34 }, .55)
       .to('.dashboard-shell', { opacity: .15, filter: 'blur(10px)', scale: 3.05, duration: .24, ease: 'power1.in' }, .76)
       .to('.hero-exit', { opacity: 1, duration: .24, ease: 'power1.inOut' }, .76);
+  } else if (!reduceMotion && mobile.matches) {
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.hero-sequence',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0.65,
+        invalidateOnRefresh: true
+      }
+    });
+
+    timeline
+      .to('.hero-intro', { opacity: 0, y: -48, scale: .98, duration: .22, ease: 'power1.out' }, 0)
+      .to('.hero-enter', { opacity: 0, duration: .12 }, 0)
+      .to('.hero-photo', { scale: 1.16, opacity: .35, filter: 'saturate(.45) brightness(.34)', duration: .48, ease: 'power1.inOut' }, .04)
+      .to('.dashboard-shell', {
+        top: '50%',
+        rotateX: 0,
+        rotateY: 0,
+        rotateZ: 0,
+        scale: 1.05,
+        opacity: 1,
+        filter: 'drop-shadow(0 30px 50px rgba(0,0,0,.36))',
+        duration: .42,
+        ease: 'power2.inOut'
+      }, .16)
+      .to('.dashboard-shell', {
+        scale: 2.25,
+        opacity: .18,
+        filter: 'blur(8px)',
+        duration: .34,
+        ease: 'power1.inOut'
+      }, .58)
+      .to('.hero-exit', { opacity: 1, duration: .28, ease: 'power1.inOut' }, .64);
   }
 </script>

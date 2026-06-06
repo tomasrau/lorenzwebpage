@@ -2,9 +2,9 @@
 // ValueProp.astro
 ---
 
-<section id="soluciones" data-scroll-theme="#f6f6f3" data-nav-theme="light" class="py-28 md:py-40 scroll-mt-20 overflow-hidden">
+<section id="soluciones" data-scroll-theme="#f6f6f3" data-nav-theme="light" class="py-20 md:py-40 scroll-mt-20 overflow-hidden">
   <div class="max-w-[1440px] mx-auto px-6 md:px-10">
-    <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-end mb-16">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-20 items-end mb-10 md:mb-16">
       <div>
         <span class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-accent">Capacidades integradas</span>
         <h2 class="text-4xl md:text-6xl font-semibold tracking-[-0.055em] leading-[0.98] text-brand-dark mt-5">
@@ -17,7 +17,7 @@
     </div>
 
     <div class="grid lg:grid-cols-12 gap-5">
-      <article class="lg:col-span-7 min-h-[520px] rounded-[2rem] bg-[#0e0a18] text-white p-8 md:p-12 relative overflow-hidden">
+      <article class="lg:col-span-7 min-h-0 md:min-h-[520px] rounded-[1.75rem] md:rounded-[2rem] bg-[#0e0a18] text-white p-7 md:p-12 relative overflow-hidden">
         <div class="absolute -right-24 -top-24 w-80 h-80 rounded-full bg-white/10 blur-3xl"></div>
         <div class="relative z-10 max-w-lg">
           <span class="text-xs uppercase tracking-[0.16em] text-brand-accent">Integración de datos E2E</span>
@@ -25,27 +25,28 @@
           <p class="text-white/60 leading-relaxed">Conectamos ERP, CRM, bancos y operaciones en una arquitectura centralizada, trazable y preparada para crecer.</p>
         </div>
 
-        <div class="absolute left-8 right-8 md:left-12 md:right-12 bottom-10 h-40">
-          <span class="absolute left-0 top-12 px-4 py-2 rounded-full bg-white/8 border border-white/10 text-xs">ERP</span>
-          <span class="absolute left-[24%] bottom-2 px-4 py-2 rounded-full bg-white/8 border border-white/10 text-xs">Bancos</span>
-          <span class="absolute right-[22%] top-0 px-4 py-2 rounded-full bg-white/8 border border-white/10 text-xs">CRM</span>
-          <span class="absolute right-0 bottom-10 px-4 py-2 rounded-full bg-white/8 border border-white/10 text-xs">Operaciones</span>
-          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-brand-accent flex items-center justify-center text-sm font-semibold shadow-[0_0_60px_rgba(94,23,235,.65)]">Gestión</div>
-          <svg class="absolute inset-0 w-full h-full opacity-35" viewBox="0 0 600 160" fill="none" aria-hidden="true">
-            <path d="M45 65C170 65 180 80 300 80M125 145C200 145 220 85 300 80M480 25C390 25 380 70 300 80M550 120C430 120 410 85 300 80" stroke="#8C61E8" stroke-dasharray="5 7"/>
+        <div class="data-network relative mt-12 md:mt-0 md:absolute md:left-12 md:right-12 md:bottom-10 h-[260px] md:h-40">
+          <span class="network-node network-erp">ERP</span>
+          <span class="network-node network-bancos">Bancos</span>
+          <span class="network-node network-crm">CRM</span>
+          <span class="network-node network-operaciones">Operaciones</span>
+          <div class="network-hub">Gestión</div>
+          <svg class="absolute inset-0 w-full h-full opacity-45" viewBox="0 0 600 260" fill="none" aria-hidden="true" preserveAspectRatio="none">
+            <path class="network-path mobile-path" d="M112 75C190 75 210 130 300 130M132 205C215 205 222 135 300 130M490 76C410 76 385 124 300 130M500 202C415 202 385 136 300 130" stroke="#8C61E8" stroke-dasharray="5 8"/>
+            <path class="network-path desktop-path" d="M45 100C170 100 180 130 300 130M125 235C200 235 220 135 300 130M480 40C390 40 380 120 300 130M550 195C430 195 410 135 300 130" stroke="#8C61E8" stroke-dasharray="5 8"/>
           </svg>
         </div>
       </article>
 
       <div class="lg:col-span-5 grid gap-5">
-        <article class="min-h-[250px] rounded-[2rem] bg-white/80 border border-brand-border-dark p-8 md:p-10 flex flex-col justify-between">
+        <article class="min-h-0 md:min-h-[250px] rounded-[1.75rem] md:rounded-[2rem] bg-white/80 border border-brand-border-dark p-7 md:p-10 flex flex-col gap-10 md:justify-between">
           <span class="text-xs uppercase tracking-[0.16em] text-brand-muted">Criterio financiero</span>
           <div>
             <h3 class="text-3xl font-semibold text-brand-dark mb-3">Indicadores que explican el negocio.</h3>
             <p class="text-sm text-brand-muted leading-relaxed">Rentabilidad, caja, costos y proyecciones diseñados para la toma de decisiones.</p>
           </div>
         </article>
-        <article class="min-h-[250px] rounded-[2rem] bg-brand-dark text-white p-8 md:p-10 flex flex-col justify-between relative overflow-hidden">
+        <article class="min-h-0 md:min-h-[250px] rounded-[1.75rem] md:rounded-[2rem] bg-brand-dark text-white p-7 md:p-10 flex flex-col gap-10 md:justify-between relative overflow-hidden">
           <div class="absolute -right-12 -bottom-20 w-64 h-64 rounded-full border-[40px] border-white/5"></div>
           <span class="text-xs uppercase tracking-[0.16em] text-white/70">Automatización operativa</span>
           <div class="relative z-10">
@@ -57,3 +58,24 @@
     </div>
   </div>
 </section>
+
+<style>
+  .network-node { position:absolute; z-index:2; padding:.6rem .85rem; border-radius:999px; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.08); color:rgba(255,255,255,.82); font-size:.75rem; line-height:1; backdrop-filter:blur(8px); }
+  .network-hub { position:absolute; z-index:3; left:50%; top:50%; width:7.5rem; height:7.5rem; border-radius:999px; transform:translate(-50%,-50%); display:grid; place-items:center; background:#5e17eb; color:white; font-weight:700; box-shadow:0 0 60px rgba(94,23,235,.55); }
+  .network-erp { left:2%; top:18%; }
+  .network-bancos { left:8%; bottom:8%; }
+  .network-crm { right:8%; top:18%; }
+  .network-operaciones { right:0; bottom:9%; }
+  .desktop-path { display:none; }
+
+  @media(min-width:768px){
+    .network-node { font-size:.75rem; padding:.55rem 1rem; }
+    .network-hub { width:6rem; height:6rem; font-size:.875rem; }
+    .network-erp { left:0; top:30%; }
+    .network-bancos { left:24%; bottom:1%; }
+    .network-crm { right:22%; top:0; }
+    .network-operaciones { right:0; bottom:25%; }
+    .mobile-path { display:none; }
+    .desktop-path { display:block; }
+  }
+</style>
